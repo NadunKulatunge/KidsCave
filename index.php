@@ -13,9 +13,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	
     <!-- Custom styles for this template -->
     <link href="./Style/carousel.css" rel="stylesheet">
+	
   </head>
   <body>
 
@@ -33,14 +35,17 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Who We Are?</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Dashboard</a>
-            </li>
 			<li class="nav-item">
               <a class="nav-link" href="#">Contact US</a>
             </li>
           </ul>
-
+		<ul class="nav navbar-nav navbar-right ">
+		<li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa fa-user"></i> Signup</a>
+            </li>
+			<li class="nav-item">
+              <a class="nav-link" href="#"><i class='fas fa-sign-in-alt'></i> Login</a>
+            </li>			
         </div>
       </nav>
     </header>
