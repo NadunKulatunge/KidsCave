@@ -22,7 +22,7 @@
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #FF9800;">
         <a class="navbar-brand" href="#">KidsCave</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -60,7 +60,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item">
-            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+            <img class="first-slide" src="http://www.bexleyfarmersmarket.com/wp-content/uploads/2017/11/kids_7.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>Example headline.</h1>
