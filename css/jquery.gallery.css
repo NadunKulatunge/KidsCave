@@ -1,0 +1,107 @@
+#codengineering_overlay {
+    background: rgba(0,0,0,0.8);
+    color: #333;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 1100;
+    text-align: center;
+    padding: 50px;
+    font-size: 35px;
+}
+#codengineering_overlay .wrapper {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#codengineering_overlay .settings_wrapper {
+    position:absolute;
+    bottom: -50px;
+    left:50%;
+    width:auto;
+    height:auto;
+}
+#codengineering_overlay .settings_wrapper .settings {
+    margin-left: -64px;
+    background: rgba(0,0,0,0.8);
+}
+.settings a i {
+    font-size: .8em;
+    color: #fff;
+}
+#codengineering_overlay .settings_wrapper .settings a {
+    /* color: #333; */
+}
+#codengineering_overlay .settings_wrapper .settings a:hover {
+    color: #ebebeb;
+}
+#codengineering_overlay .img_wrapper {
+    position:absolute;
+    top: 50%;
+    left:50%;
+    width:auto;
+    height:auto;
+}
+#codengineering_overlay .nav-btn {
+    background: rgba(0,0,0,0.8);
+    position:absolute;
+    top: 0px;
+    width:50px;
+    height:100%;
+}
+#codengineering_overlay .nav-btn:hover {
+    color: #ebebeb;
+}
+#codengineering_overlay .nav-btn-left {
+    left: -50px;
+}
+#codengineering_overlay .nav-btn-right {
+    right: -50px;
+}
+
+#codengineering_overlay img {
+    /*max-width: 95%;
+    max-height: 95%;*/
+}
+#codengineering_overlay p:first-of-type {
+    font-weight: bold;
+    font-size:14px;
+}
+#codengineering_overlay p {
+    color: #fff;
+    margin-top: 15px;
+}
+#codengineering_overlay .pointer:hover {
+    cursor: pointer;
+}
+#codengineering_overlay .loading_text {
+    vertical-align: middle;
+    color: white;
+    opacity: 0;
+}
+@media (max-width: 480px){
+	#codengineering_overlay p:first-of-type {
+		font-size: 12px;
+	}
+}
+@media (max-width: 414px){
+	#codengineering_overlay .settings_wrapper .settings {
+		margin-left: -40px;
+	}
+}
+@media (max-width: 384px){
+	.fa-3x {
+		font-size: 2em !important;
+	}
+}
+@media (max-width: 320px){
+	.fa-3x {
+		font-size: 1em !important;
+	}
+}

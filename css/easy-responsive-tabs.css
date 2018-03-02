@@ -1,0 +1,210 @@
+
+ul.resp-tabs-list,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.resp-tabs-list li {
+  font-weight: 600;
+  font-size: 13px;
+  display: inline-block;
+  padding: 13px 15px;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  float: left;
+}
+
+.resp-tabs-container {
+  padding: 0px;
+  background-color: #fff;
+  clear: left;
+}
+
+h2.resp-accordion {
+  cursor: pointer;
+  padding: 5px;
+  display: none;
+}
+
+.resp-tab-content {
+	display: none;
+	padding: 2em;
+	background: #65b126;
+}
+
+.resp-tab-active {
+  border: 1px solid #c1c1c1;
+  border-bottom: none;
+  margin-bottom: -1px !important;
+  padding: 12px 14px 14px 14px !important;
+}
+
+.resp-tab-active {
+  border-bottom: none;
+  background-color: #fff;
+}
+
+.resp-content-active,
+.resp-accordion-active { display: block; }
+
+.resp-tab-content { border: 1px solid #c1c1c1; }
+
+h2.resp-accordion {
+	border: 1px solid #c1c1c1;
+	border-top: 0px solid #c1c1c1;
+	margin: 0px;
+	padding: 10px 15px;
+    font-size: 1.3em;
+    color: #212121;
+    font-weight: bold;
+}
+
+h2.resp-tab-active {
+  border-bottom: 0px solid #c1c1c1 !important;
+  margin-bottom: 0px !important;
+  padding: 10px 15px !important;
+}
+
+h2.resp-tab-title:last-child {
+  border-bottom: 12px solid #c1c1c1 !important;
+  background: blue;
+}
+
+/*-----------Vertical tabs-----------*/
+
+.resp-vtabs ul.resp-tabs-list {
+  float: left;
+  width: 30%;
+}
+
+.resp-vtabs .resp-tabs-list li {
+	display: block;
+    padding: 15px 15px !important;
+    margin: 0;
+    cursor: pointer;
+    float: none;
+    text-transform: uppercase;
+    background: #ffffff;
+    border-top: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+    letter-spacing: 1px;
+    font-family: 'Handlee', cursive;
+	color:#212121;
+}
+.resp-vtabs .resp-tabs-list li i{
+	padding-right:1em;
+}
+.resp-vtabs .resp-tabs-list li:last-child{
+	border-bottom:1px solid #ececec;
+}
+
+.resp-vtabs .resp-tabs-container {
+	padding: 0px;
+    background-color: #fff;
+    border: none;
+    border-left: 2px solid #e4e4e4;
+    float: left;
+    width: 50%;
+    border-radius: 0;
+    clear: none;
+}
+
+.resp-vtabs .resp-tab-content { border: none; }
+
+.resp-vtabs li.resp-tab-active {
+	border: none;
+    border-right: none;
+    background-color: #fa3d03;
+    position: relative;
+    z-index: 1;
+    margin-right: 0;
+    color: #fff;
+}
+.resp-vtabs .resp-tabs-list li:hover{
+	background-color: #fa3d03;
+	color:#fff;
+}
+
+.resp-arrow {
+  width: 0;
+  height: 0;
+  float: right;
+  margin-top: 3px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid #c1c1c1;
+}
+
+h2.resp-tab-active span.resp-arrow {
+  border: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid #fff;
+}
+
+/*-----------Accordion styles-----------*/
+
+h2.resp-tab-active { 
+	background: #fa3d03 !important;
+    color: #fff;
+}
+h2.resp-accordion:hover{
+	background: #fa3d03;
+    color: #fff;
+}
+
+.resp-easy-accordion h2.resp-accordion { display: block; }
+
+.resp-easy-accordion .resp-tab-content { border: 1px solid #c1c1c1; }
+
+.resp-easy-accordion .resp-tab-content:last-child { border-bottom: 1px solid #c1c1c1 !important; }
+
+.resp-jfit {
+  width: 100%;
+  margin: 0px;
+}
+
+.resp-tab-content-active { display: block; }
+
+h2.resp-accordion:first-child { border-top: 1px solid #c1c1c1 !important; }
+/*Here your can change the breakpoint to set the accordion, when screen resolution changed*/
+@media only screen and (max-width: 768px) {
+	h2.resp-accordion i {
+		padding-right: 1em;
+	}
+
+ul.resp-tabs-list { display: none; }
+
+h2.resp-accordion { display: block; }
+
+.resp-vtabs .resp-tab-content { border: 1px solid #C1C1C1; }
+
+.resp-vtabs .resp-tabs-container {
+  border: none;
+  float: none;
+  width: 100%;
+  min-height: initial;
+  clear: none;
+}
+
+.resp-accordion-closed { display: none !important; }
+
+.resp-vtabs .resp-tab-content:last-child { border-bottom: 1px solid #c1c1c1 !important; }
+}
+@media (max-width: 640px){
+	h2.resp-accordion {
+		font-size: 1.2em;
+	}
+}
+@media (max-width: 384px){
+	.resp-tab-content {
+		padding: 1em;
+	}
+}
+@media (max-width: 320px){
+	h2.resp-accordion {
+		font-size: 1em;
+	}
+}
