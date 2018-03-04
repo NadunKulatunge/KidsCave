@@ -119,10 +119,10 @@ class USER
 		$mail->Host       = "smtp.gmail.com";      
 		$mail->Port       = 465;             
 		$mail->AddAddress($email);
-		$mail->Username="your-email@gmail.com";  
-		$mail->Password="your-pass";            
-		$mail->SetFrom('your-email@gmail.com','KidsCave');
-		$mail->AddReplyTo("your-email@gmail.com","KidsCave");
+		$mail->Username="knpelectronics@gmail.com";  
+		$mail->Password="kulatunge";            
+		$mail->SetFrom('knpelectronics@gmail','KidsCave');
+		$mail->AddReplyTo("knpelectronics@gmail.com","KidsCave");
 		$mail->Subject    = $subject;
 		$mail->MsgHTML($message);
 		$mail->Send();
