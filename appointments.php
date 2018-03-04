@@ -39,7 +39,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <?php include('includes/header.php'); ?>
 <!-- //header -->
 <div style="min-height: calc(100vh - 190px); margin-top: 1em; margin-bottom:3em;">
-	<div class="container" ><div style =" border-bottom:2px solid #14a1ff;"><h1>Profile</h1></div><br>
+	<div class="container" ><div style =" border-bottom:2px solid #14a1ff;"><h1>Appointments</h1></div><br>
 		<div class="row" >
 			<!-- left panel -->
 			<?php include('includes/left-panel.php'); ?>
