@@ -120,7 +120,7 @@ class USER
 		$mail->Port       = 465;             
 		$mail->AddAddress($email);
 		$mail->Username="knpelectronics@gmail.com";  
-		$mail->Password="kulatunge";            
+		$mail->Password="";            
 		$mail->SetFrom('knpelectronics@gmail','KidsCave');
 		$mail->AddReplyTo("knpelectronics@gmail.com","KidsCave");
 		$mail->Subject    = $subject;
