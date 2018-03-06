@@ -61,7 +61,7 @@ class USER
 					if($userRow['userPass']==md5($upass))
 					{
 						$_SESSION['userSession'] = $userRow['userID'];
-						$_SESSION['userRole'] = $userRow['user_role_id'];
+						$_SESSION['userRole'] = $userRow['userRole'];
 						return true;
 					}
 					else
@@ -119,10 +119,10 @@ class USER
 		$mail->Host       = "smtp.gmail.com";      
 		$mail->Port       = 465;             
 		$mail->AddAddress($email);
-		$mail->Username="knpelectronics@gmail.com";  
-		$mail->Password="";            
-		$mail->SetFrom('knpelectronics@gmail','KidsCave');
-		$mail->AddReplyTo("knpelectronics@gmail.com","KidsCave");
+		$mail->Username="your-email@gmail.com";  
+		$mail->Password="your-password";            
+		$mail->SetFrom('your-email@gmail.com','KidsCave');
+		$mail->AddReplyTo("your-email@gmail.com","KidsCave");
 		$mail->Subject    = $subject;
 		$mail->MsgHTML($message);
 		$mail->Send();
