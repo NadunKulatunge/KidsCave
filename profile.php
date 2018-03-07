@@ -47,6 +47,23 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			<!-- right panel -->
 			<div class="col-md-9">				
 					<img src="images/defaultBoy.png" class="center-block" alt="Profile Picture">
+					<div>
+						<form>
+							<div class='form-group'>
+								<label for='disabledInputEmail'>Email address</label>
+								<input class='form-control' id='disabledInputEmail' type='email' value='<?php echo $row['userEmail']; ?>' disabled>
+							</div>
+							<div class='form-group'>
+								<label for='disabledInputUserRole'>User Role</label>
+								<input class='form-control' id='disabledInputUserRole' type='email' value='<?php echo $row['userRole']; ?>' disabled>
+							</div>
+							<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							</div>
+							<button type="submit" class="btn btn-default">Submit</button>
+						</form>
+					</div>
 			</div>
 			<!-- right panel -->
 		</div>
