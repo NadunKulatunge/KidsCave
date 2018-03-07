@@ -45,7 +45,9 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			<?php include('includes/left-panel.php'); ?>
 			<!-- //left panel -->
 			<!-- right panel -->
-			<div class="col-md-9">.col-md-6</div>
+			<div class="col-md-9">				
+					<img src="images/defaultBoy.png" class="center-block" alt="Profile Picture">
+			</div>
 			<!-- right panel -->
 		</div>
 	</div>
