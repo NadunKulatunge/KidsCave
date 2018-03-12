@@ -23,6 +23,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome-icons -->
 <link href="//fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- //favicon -->
+<link rel="shortcut icon" href="favicon.ico">
 </head>
 	
 <body>
