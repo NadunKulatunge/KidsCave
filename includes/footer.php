@@ -14,11 +14,11 @@
 			<div class="col-md-4 wthree_footer_grid_left1">
 				<h4>Navigation</h4>
 				<ul>
-					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="index.html">Home</a></li>
-					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="#about" class="scroll">About Us</a></li>
-					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="#programs" class="scroll">Programs</a></li>
-					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="#newsletter" class="scroll">Newsletter</a></li>
-					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="#testimonials" class="scroll">Testimonials</a></li>
+					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo SCRIPT_ROOT; ?>/index.php">Home</a></li>
+					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo SCRIPT_ROOT; ?>/index.php#about" class="scroll">About Us</a></li>
+					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo SCRIPT_ROOT; ?>/index.php#programs" class="scroll">Programs</a></li>
+					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo SCRIPT_ROOT; ?>/index.php#newsletter" class="scroll">Newsletter</a></li>
+					<li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i><a href="<?php echo SCRIPT_ROOT; ?>/index.php#testimonials" class="scroll">Testimonials</a></li>
 				</ul>
 			</div>
 			<div class="col-md-3 wthree_footer_grid_left1">
@@ -44,32 +44,32 @@
 				<div class="col-md-7 wthree_footer_grid_right2">
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/1.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/12.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/12.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/13.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/13.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/15.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/15.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/22.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/22.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="wthree_footer_grid_right2_w3">
 						<a href="#" data-toggle="modal" data-target="#myModal">
-							<img src="images/23.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/23.jpg" alt=" " class="img-responsive" />
 						</a>
 					</div>
 					<div class="clearfix"> </div>

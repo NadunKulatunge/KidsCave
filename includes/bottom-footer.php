@@ -1,5 +1,5 @@
 <!-- contact-effect -->
-<script src="js/classie.js"></script>
+<script src="<?php echo SCRIPT_ROOT; ?>/js/classie.js"></script>
 <script>
 	(function() {
 		// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
@@ -37,7 +37,7 @@
 </script>
 <!-- //contact-effect -->
 <!-- work -->
-	<script type="text/javascript"  src="js/jquery.gallery.js" ></script>
+	<script type="text/javascript"  src="<?php echo SCRIPT_ROOT; ?>/js/jquery.gallery.js" ></script>
 	<script>
 		$(function() {
 			$('.w3_tab_img').createSimpleImgGallery();
@@ -72,10 +72,10 @@
 			
 		});
 	</script>
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/jquery.flexisel.js"></script>
 <!-- //flexisel -->
 <!-- team-slider -->
-	<script type="text/javascript" src="js/jquery.glide.js"></script>
+	<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/jquery.glide.js"></script>
 	<script type="text/javascript">
 		var glide = $('.w3_slider').glide().data('api_glide');
 
@@ -87,7 +87,7 @@
 	</script>
 <!-- //team-slider -->
 <!-- responsive-tabs -->
-	<script src="js/easy-responsive-tabs.js"></script>
+	<script src="<?php echo SCRIPT_ROOT; ?>/js/easy-responsive-tabs.js"></script>
 	<script>
 		$(document).ready(function () {
 		$('#verticalTab').easyResponsiveTabs({
@@ -99,8 +99,8 @@
 	</script>
 <!-- //responsive-tabs -->	
 <!-- text-effect -->
-		<script type="text/javascript" src="js/jquery.transit.js"></script> 
-		<script type="text/javascript" src="js/jquery.textFx.js"></script> 
+		<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/jquery.transit.js"></script> 
+		<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/jquery.textFx.js"></script> 
 		<script type="text/javascript">
 			$(document).ready(function() {
 					$('.test2').textFx({
@@ -113,8 +113,8 @@
 		</script>
 <!-- //text-effect -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/move-top.js"></script>
+<script type="text/javascript" src="<?php echo SCRIPT_ROOT; ?>/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -142,7 +142,7 @@
 	</script>
 <!-- //here ends scrolling icon -->
 <!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
+	<script src="<?php echo SCRIPT_ROOT; ?>/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
 </body>
 </html>

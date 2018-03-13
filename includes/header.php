@@ -5,7 +5,7 @@
 					<li><a href="#small-dialog1" style="background: red;"class="play-icon popup-with-zoom-anim">Enroll Now!</a></li>
 					<?php
 					if($user_login->is_logged_in()!=""){
-						echo '<li><a href="dashboard.php">MyAccount</a></li>';
+						echo '<li><a href="'.SCRIPT_ROOT.'/dashboard.php">MyAccount</a></li>';
 					}else{
 						echo '<li><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></li>';
 					}
@@ -28,19 +28,19 @@
 						<span class="icon-bar"></span>
 					</button>
 					<div class="w3_navigation_pos">
-						<h1><a href="index.html"><span>KidsCave</span><i>baby home</i></a></h1>
+						<h1><a href="<?php echo SCRIPT_ROOT; ?>/index.php"><span>KidsCave</span><i>baby home</i></a></h1>
 					</div>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--miranda">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current"><a href="index.php" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="index.php#events" class="scroll menu__link">Our Events</a></li>
-							<li class="menu__item"><a href="index.php#programs" class="scroll menu__link">Programs</a></li>
-							<li class="menu__item"><a href="index.php#work" class="scroll menu__link">Work</a></li>
-							<li class="menu__item"><a href="index.php#team" class="scroll menu__link">Team</a></li>
-							<li class="menu__item"><a href="index.php#mail" class="scroll menu__link">Mail Us</a></li>
+							<li class="menu__item menu__item--current"><a href="<?php echo SCRIPT_ROOT; ?>/index.php" class="menu__link">Home</a></li>
+							<li class="menu__item"><a href="<?php echo SCRIPT_ROOT; ?>/index.php#events" class="scroll menu__link">Our Events</a></li>
+							<li class="menu__item"><a href="<?php echo SCRIPT_ROOT; ?>/index.php#programs" class="scroll menu__link">Programs</a></li>
+							<li class="menu__item"><a href="<?php echo SCRIPT_ROOT; ?>/index.php#work" class="scroll menu__link">Work</a></li>
+							<li class="menu__item"><a href="<?php echo SCRIPT_ROOT; ?>/index.php#team" class="scroll menu__link">Team</a></li>
+							<li class="menu__item"><a href="<?php echo SCRIPT_ROOT; ?>/index.php#mail" class="scroll menu__link">Mail Us</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -155,7 +155,7 @@ if(isset($_GET['error'])){
 		</div>
 	</div>
 <!-- //pop-up-box -->
-<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="<?php echo SCRIPT_ROOT; ?>/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function() {
 	$('.popup-with-zoom-anim').magnificPopup({

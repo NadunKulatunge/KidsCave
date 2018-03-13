@@ -16,7 +16,7 @@ if(isset($_POST['btn-login']))
 	$upass = trim($_POST['txtupass']);
 	if($user_login->login($email,$upass))
 	{
-		$user_login->redirect('dashboard.php');
+		$user_login->redirect('profile.php');
 	}
 }
 if(isset($_POST['btn-signup']))
@@ -53,7 +53,7 @@ if(isset($_POST['btn-signup']))
 						Welcome to Coding Cage!<br/>
 						To complete your registration  please , just click following link<br/>
 						<br /><br />
-						<a href='http://localhost/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
+						<a href='.SCRIPT_ROOT.'/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
 						<br /><br />
 						Thanks,";
 						
@@ -134,7 +134,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 <!-- //header -->
 
 <!-- banner -->
-	<div data-vide-bg="video/nursery">
+	<div data-vide-bg="<?php echo SCRIPT_ROOT; ?>/video/nursery">
 		<div class="center-container">
 			<div class="container">
 				<div class="w3_agile_banner_info">
@@ -161,7 +161,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 				<section>
 					<div class="modal-body">
 						<div class="w3_modal_body_left">
-							<img src="images/1.jpg" alt=" " class="img-responsive" />
+							<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 						</div>
 						<div class="w3_modal_body_right">
 							<h4>Suspendisse et sapien ac diam suscipit posuere</h4>
@@ -192,7 +192,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			<div class="agile_banner_bottom_grids">
 				<div class="col-md-3 agile_banner_bottom_grid">
 					<div class="view view-first">
-						<img src="images/2.jpg" alt=" " class="img-responsive" />
+						<img src="<?php echo SCRIPT_ROOT; ?>/images/2.jpg" alt=" " class="img-responsive" />
 						<div class="mask">
 							<h5>Nursery</h5>
 							<p>Integer ac condimentum ligula. Ut malesuada in purus convallis venenatis.</p>
@@ -204,7 +204,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 				</div>
 				<div class="col-md-3 agile_banner_bottom_grid">
 					<div class="view view-first">
-						<img src="images/3.jpg" alt=" " class="img-responsive" />
+						<img src="<?php echo SCRIPT_ROOT; ?>/images/3.jpg" alt=" " class="img-responsive" />
 						<div class="mask">
 							<h5 class="agileits_w3layouts1">Nursery</h5>
 							<p>Integer ac condimentum ligula. Ut malesuada in purus convallis venenatis.</p>
@@ -216,7 +216,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 				</div>
 				<div class="col-md-3 agile_banner_bottom_grid">
 					<div class="view view-first">
-						<img src="images/4.jpg" alt=" " class="img-responsive" />
+						<img src="<?php echo SCRIPT_ROOT; ?>/images/4.jpg" alt=" " class="img-responsive" />
 						<div class="mask">
 							<h5 class="agileits_w3layouts2">Nursery</h5>
 							<p>Integer ac condimentum ligula. Ut malesuada in purus convallis venenatis.</p>
@@ -228,7 +228,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 				</div>
 				<div class="col-md-3 agile_banner_bottom_grid">
 					<div class="view view-first">
-						<img src="images/5.jpg" alt=" " class="img-responsive" />
+						<img src="<?php echo SCRIPT_ROOT; ?>/images/5.jpg" alt=" " class="img-responsive" />
 						<div class="mask">
 							<h5 class="agileits_w3layouts3">Nursery</h5>
 							<p>Integer ac condimentum ligula. Ut malesuada in purus convallis venenatis.</p>
@@ -329,7 +329,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 					<ul class="slides">
 						<li class="slide">
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/7.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/7.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Olivia Wilde</h4>
 									<p>Teacher</p>
@@ -343,7 +343,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/9.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/9.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Brett Cullen</h4>
 									<p>Teacher</p>
@@ -357,7 +357,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/8.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/8.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Emma Stone</h4>
 									<p>Teacher</p>
@@ -371,7 +371,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/10.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/10.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Jorge Nicolas</h4>
 									<p>Teacher</p>
@@ -388,7 +388,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 						</li>
 						<li class="slide">
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/7.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/7.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Olivia Wilde</h4>
 									<p>Teacher</p>
@@ -402,7 +402,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/9.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/9.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Brett Cullen</h4>
 									<p>Teacher</p>
@@ -416,7 +416,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/8.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/8.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Emma Stone</h4>
 									<p>Teacher</p>
@@ -430,7 +430,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 							</div>
 							<div class="col-md-3 wthree_team_grid">
-								<img src="images/10.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/10.jpg" alt=" " class="img-responsive" />
 								<div class="wthree_team_grid_w3">
 									<h4>Jorge Nicolas</h4>
 									<p>Teacher</p>
@@ -497,7 +497,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			<p class="w3_agile_elit">Quisque dictum elit in nunc malesuada lacinia. Cras id porttitor turpis.</p>
 			<div class="agile_banner_bottom_grids">
 				<div class="agile_events_grid">
-					<img src="images/1.jpg" alt=" " class="img-responsive" />
+					<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 					<div class="agile_events_grid_pos agile_events_grid_pos1">
 						<h5><span>01</span> 12 / 2016</h5>
 						<h4><a href="#" data-toggle="modal" data-target="#myModal">nunc malesuada lacinia</a></h4>
@@ -513,7 +513,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 					</div>
 				</div>
 				<div class="agile_events_grid">
-					<img src="images/13.jpg" alt=" " class="img-responsive" />
+					<img src="<?php echo SCRIPT_ROOT; ?>/images/13.jpg" alt=" " class="img-responsive" />
 					<div class="agile_events_grid_pos_sub agile_events_grid_pos1">
 						<h5 class="w3_agileits_event_head"><span>05</span> 12 / 2016</h5>
 						<h4><a href="#" data-toggle="modal" data-target="#myModal">consequat dictum sodales</a></h4>
@@ -529,7 +529,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 					</div>
 				</div>
 				<div class="agile_events_grid">
-					<img src="images/15.jpg" alt=" " class="img-responsive" />
+					<img src="<?php echo SCRIPT_ROOT; ?>/images/15.jpg" alt=" " class="img-responsive" />
 					<div class="agile_events_grid_pos agile_events_grid_pos1">
 						<h5><span>09</span> 12 / 2016</h5>
 						<h4><a href="#" data-toggle="modal" data-target="#myModal">ultrices hendrerit amet</a></h4>
@@ -558,27 +558,27 @@ if(isset($_GET['id']) && isset($_GET['code']))
 					<ul id="flexiselDemo1">	
 						<li>
 							<div class="agileinfo_testimonials_grid">
-								<img src="images/17.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/17.jpg" alt=" " class="img-responsive" />
 							</div>
 						</li>
 						<li>
 							<div class="agileinfo_testimonials_grid">
-								<img src="images/18.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/18.jpg" alt=" " class="img-responsive" />
 							</div>
 						</li>
 						<li>
 							<div class="agileinfo_testimonials_grid">
-								<img src="images/19.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/19.jpg" alt=" " class="img-responsive" />
 							</div>
 						</li>
 						<li>
 							<div class="agileinfo_testimonials_grid">
-								<img src="images/20.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/20.jpg" alt=" " class="img-responsive" />
 							</div>
 						</li>
 						<li>
 							<div class="agileinfo_testimonials_grid">
-								<img src="images/21.jpg" alt=" " class="img-responsive" />
+								<img src="<?php echo SCRIPT_ROOT; ?>/images/21.jpg" alt=" " class="img-responsive" />
 							</div>
 						</li>
 					</ul>
@@ -609,10 +609,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 							<div class="w3_tab_img agileinfo_img">
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/13.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/13.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/13.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/13.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -621,36 +621,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 										</a>
 									</div>
 									<div class="agileits_demo">
-										<a href="images/15.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/15.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/15.jpg" alt=" " class="img-responsive" />
-												</div>
-												<figcaption>
-													<span>Nursery</span>
-												</figcaption>
-											</figure>
-										</a>
-									</div>
-								</div>
-								<div class="col-md-4 w3_tab_img_left">
-									<div class="agileits_demo">
-										<a href="images/1.jpg">
-											<figure class="w3layouts_work">
-												<div class="w3layouts_work_sub">
-													<img src="images/1.jpg" alt=" " class="img-responsive" />
-												</div>
-												<figcaption>
-													<span>Nursery</span>
-												</figcaption>
-											</figure>
-										</a>
-									</div>
-									<div class="agileits_demo">
-										<a href="images/22.jpg">
-											<figure class="w3layouts_work">
-												<div class="w3layouts_work_sub">
-													<img src="images/22.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/15.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -661,10 +635,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/12.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/1.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/12.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -673,10 +647,36 @@ if(isset($_GET['id']) && isset($_GET['code']))
 										</a>
 									</div>
 									<div class="agileits_demo">
-										<a href="images/23.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/22.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/23.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/22.jpg" alt=" " class="img-responsive" />
+												</div>
+												<figcaption>
+													<span>Nursery</span>
+												</figcaption>
+											</figure>
+										</a>
+									</div>
+								</div>
+								<div class="col-md-4 w3_tab_img_left">
+									<div class="agileits_demo">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/12.jpg">
+											<figure class="w3layouts_work">
+												<div class="w3layouts_work_sub">
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/12.jpg" alt=" " class="img-responsive" />
+												</div>
+												<figcaption>
+													<span>Nursery</span>
+												</figcaption>
+											</figure>
+										</a>
+									</div>
+									<div class="agileits_demo">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/23.jpg">
+											<figure class="w3layouts_work">
+												<div class="w3layouts_work_sub">
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/23.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -692,10 +692,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 							<div class="w3_tab_img agileinfo_img">
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/15.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/15.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/15.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/15.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -706,10 +706,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/1.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/1.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/1.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -720,10 +720,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/23.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/23.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/23.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/23.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -739,10 +739,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 							<div class="w3_tab_img agileinfo_img">
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/13.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/13.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/13.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/13.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -753,10 +753,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/23.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/23.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/23.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/23.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -772,10 +772,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 							<div class="w3_tab_img agileinfo_img">
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/1.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/1.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/1.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/1.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>
@@ -786,10 +786,10 @@ if(isset($_GET['id']) && isset($_GET['code']))
 								</div>
 								<div class="col-md-4 w3_tab_img_left">
 									<div class="agileits_demo">
-										<a href="images/22.jpg">
+										<a href="<?php echo SCRIPT_ROOT; ?>/images/22.jpg">
 											<figure class="w3layouts_work">
 												<div class="w3layouts_work_sub">
-													<img src="images/22.jpg" alt=" " class="img-responsive" />
+													<img src="<?php echo SCRIPT_ROOT; ?>/images/22.jpg" alt=" " class="img-responsive" />
 												</div>
 												<figcaption>
 													<span>Nursery</span>

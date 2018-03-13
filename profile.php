@@ -28,7 +28,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			<!-- //left panel -->
 			<!-- right panel -->
 			<div class="col-md-9">				
-					<img src="images/defaultBoy.png" class="center-block" alt="Profile Picture">
+					<img src="<?php echo SCRIPT_ROOT; ?>/images/defaultBoy.png" class="center-block" alt="Profile Picture">
 					<div>
 						<form>
 							<div class='form-group'>

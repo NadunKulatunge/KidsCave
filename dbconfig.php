@@ -3,7 +3,7 @@ class Database
 {
      
     private $host = "localhost";
-    private $db_name = "KidsCave";
+    private $db_name = "kidscave";
     private $username = "root";
     private $password = "";
     public $conn;
