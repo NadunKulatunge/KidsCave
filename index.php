@@ -165,7 +165,8 @@ if(isset($_GET['id']) && isset($_GET['code']))
 						</div>
 						<div class="w3_modal_body_right">
 							<h4>Suspendisse et sapien ac diam suscipit posuere</h4>
-							<p>Ut enim ad minima veniam, quis nostrum 
+							<p>
+							Ut enim ad minima veniam, quis nostrum 
 							exercitationem ullam corporis suscipit laboriosam, 
 							nisi ut aliquid ex ea commodi consequatur? Quis autem 
 							vel eum iure reprehenderit qui in ea voluptate velit 

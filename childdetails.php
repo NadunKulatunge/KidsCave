@@ -17,24 +17,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <!-- top html header -->
 <?php include('includes/top-header.php'); ?>
 <!-- //top html header -->
-<style>
-.box {
-	border:2px solid #14a1ff;
-}
-.box:hover{
-	background-color:#14a1ff;
-}
-.box:focus{
-	background-color:#14a1ff;
-}
-.wthree_footer_grid_left1 ul li a:hover {
-	color: black;
-}
-.box > a:hover, .box > a:focus {
-    text-decoration: none;
-    background-color: #14a1ff;
-}
-</style>
 <!-- header -->
 <?php include('includes/header.php'); ?>
 <!-- //header -->
