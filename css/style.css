@@ -10,6 +10,16 @@ body{
 	background:#fff;
 	font-family: 'Open Sans', sans-serif;
  }
+.table-responsive 
+{   
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: auto;   
+    overflow-y: hidden;     
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #000000; 
+}
 h1,h2,h3,h4,h5,h6{
 	margin:0;	
 	font-family: 'Handlee', cursive;
