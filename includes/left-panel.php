@@ -9,9 +9,27 @@ echo"<style>
 .box:focus{
 	background-color:#14a1ff;
 }
-.wthree_footer_grid_left1 ul li a:hover {
+
+.left_panel_menu ul li a:hover {
 	color: black;
 }
+.left_panel_menu ul li{
+	list-style-type:none;
+	text-transform:uppercase;
+	color:#fa3d03;
+	margin-bottom:1em;
+}
+.left_panel_menu ul li i{
+	padding-right:1em;
+}
+.left_panel_menu ul li:last-child,.wthree_footer_grid_right1 ul li:last-child{
+	margin:0;
+}
+.left_panel_menu ul li a,.wthree_footer_grid_right1 ul li a{
+	color:#212121;
+	text-decoration:none;
+}
+
 .box > a:hover, .box > a:focus {
     text-decoration: none;
     background-color: #14a1ff;
@@ -19,7 +37,7 @@ echo"<style>
 </style>
 ";
 if($_SESSION['userRole']=="Parent"){
-	echo'<div class="col-md-3 wthree_footer_grid_left1 ">
+	echo'<div class="col-md-3 left_panel_menu ">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
@@ -32,7 +50,7 @@ if($_SESSION['userRole']=="Parent"){
 				</ul>
 			</div>';
 }elseif($_SESSION['userRole']=="Teacher"){
-	echo'<div class="col-md-3 wthree_footer_grid_left1 ">
+	echo'<div class="col-md-3 left_panel_menu ">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
@@ -46,7 +64,7 @@ if($_SESSION['userRole']=="Parent"){
 				</ul>
 			</div>';
 }elseif($_SESSION['userRole']=="Principal"){
-	echo'<div class="col-md-3 wthree_footer_grid_left1 ">
+	echo'<div class="col-md-3 left_panel_menu">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
@@ -61,7 +79,7 @@ if($_SESSION['userRole']=="Parent"){
 				</ul>
 			</div>';
 }elseif($_SESSION['userRole']=="Admin"){
-	echo'<div class="col-md-3 wthree_footer_grid_left1 ">
+	echo'<div class="col-md-3 left_panel_menu ">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
