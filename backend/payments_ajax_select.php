@@ -1,7 +1,7 @@
  <?php  
- //select.php  
+ 
  $output = '';  
- $connect = mysqli_connect("localhost", "root", "", "kidscave");  
+ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
  if(isset($_POST["action"]))  
  {  
       $procedure = "  

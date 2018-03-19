@@ -1,9 +1,9 @@
  <?php  
- //action.php  
+
  if(isset($_POST["action"]))  
  {  
       $output = '';  
-      $connect = mysqli_connect("localhost", "root", "", "kidscave");  
+       include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
       if($_POST["action"] =="Add")  
       {  
            $description = mysqli_real_escape_string($connect, $_POST["description"]);  
@@ -23,7 +23,7 @@
                      echo 'Data Inserted';  
                 }  
            }  
-      }  
+      }
       if($_POST["action"] == "Edit")  
       {  
            $description = mysqli_real_escape_string($connect, $_POST["description"]);  
