@@ -8,8 +8,8 @@ if(!$user_login->is_logged_in()){
 }
 
 //Allowed only Admin && Principal userRole
-if($_SESSION['userRole']!= "Admin" && $_SESSION['userRole']!= "Principal"){
-	$user_login->redirect('../index.php');
+if($_SESSION['userRole']!= "Admin" && $_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Teacher"){
+	$user_login->redirect('../payments.php');
 }
 
 $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
@@ -112,7 +112,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
            if(confirm("Are you sure you want to remove this data?")){  
                 var action = "Delete";  
                 $.ajax({  
-                     url:"action.php",  
+                     url:"payments_ajax_action.php",  
                      method:"POST",  
                      data:{id:id, action:action},  
                      success:function(data){  

@@ -10,8 +10,7 @@ body{
 	background:#fff;
 	font-family: 'Open Sans', sans-serif;
  }
-.table-responsive 
-{   
+.table-responsive{   
     width: 100%;
     margin-bottom: 15px;
     overflow-x: auto;   
