@@ -2939,3 +2939,27 @@ span.char26 {
 		padding: 12px 10px 12px 50px;
 	}
 }
+div.box1{
+	font-size: 16px;
+	font:rgba(190,240,150);
+	font-weight:bold;
+	font-family:Comic Sans MS;
+	background-color:rgba(100,160,100,0.3);
+	background:url(../images/24.jpg) 1280px 800px;
+	width:900px;
+	height:200px;
+	overflow:scroll;
+	!overflow-x: hidden;
+}
+div.box2{
+	font:rgb(190,240,150);
+	font-size: 16px;
+	font-family:Comic Sans MS;
+	font-weight:bold;
+	background-color:rgba(130,100,100,0.3);
+	background:url(../images/24.jpg) 1280px 800px;
+	width:900px;
+	height:435px;
+	overflow:scroll;
+	!overflow-x: hidden;
+}
