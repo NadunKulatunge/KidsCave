@@ -74,7 +74,6 @@ if($_SESSION['userRole']=="Parent"){
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/enrollments.php">Enrollments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/appointments.php">Appointments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
