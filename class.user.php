@@ -56,7 +56,7 @@ class USER
 			
 			if($stmt->rowCount() == 1)
 			{
-				if($userRow['userStatus']=="Y")
+				if($userRow['userStatus']=="Y" && $userRow['adminApprove']=="1" && $userRow['principalApprove']=="1")
 				{
 					if($userRow['userPass']==md5($upass))
 					{
@@ -119,7 +119,7 @@ class USER
 		$mail->Host       = "smtp.gmail.com";      
 		$mail->Port       = 465;             
 		$mail->AddAddress($email);
-		$mail->Username="your-email@gmail.com";  
+		$mail->Username="your-email@gmail.com";
 		$mail->Password="your-password";            
 		$mail->SetFrom('your-email@gmail.com','KidsCave');
 		$mail->AddReplyTo("your-email@gmail.com","KidsCave");
