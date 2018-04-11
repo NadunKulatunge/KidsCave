@@ -9,45 +9,97 @@ session_start();
 require_once 'class.user.php';
 $user_login = new USER();
 
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+function valid_date($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = str_replace("/","-",$data);
+    $dateArray = explode("-",$data);
+    if( !checkdate($dateArray[1],$dateArray[2],$dateArray[0]) ){
+        //invalid date
+        return false;
+    }else{
+        //valid date
+        return true;
+    }
+}
+if(isset($_POST['btn-login'])){
 
-if(isset($_POST['btn-login']))
-{
 	$email = trim($_POST['txtemail']);
 	$upass = trim($_POST['txtupass']);
-	if($user_login->login($email,$upass))
-	{
+
+	if($user_login->login($email,$upass)){
 		$user_login->redirect('profile.php');
 	}
+
 }
-if(isset($_POST['btn-signup']))
-{
-	$uname = trim($_POST['txtuname']);
-	$email = trim($_POST['txtemail']);
-	$upass = trim($_POST['txtpass']);
+if(isset($_POST['btn-signup'])){
+    $Err ="";
+
+	$uname = test_input($_POST['txtuname']);
+	$email = test_input($_POST['txtemail']);
+	$upass = test_input($_POST['txtpass']);
+    $upass2 = test_input($_POST['Password']);
+    $dbirth = test_input($_POST['txtdbirth']);
+    $gender = test_input($_POST['gender']);
+    $gender1=$gender;
 	$code = md5(uniqid(rand()));
-	
-	$stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userEmail=:email_id");
-	$stmt->execute(array(":email_id"=>$email));
-	$row = $stmt->fetch(PDO::FETCH_ASSOC);
-	
-	if($stmt->rowCount() > 0)
-	{
-		$msg = "
-		      <div class='alert alert-error'>
+
+    if ( empty($uname) || !preg_match("/^[a-zA-Z ]*$/",$uname) ) {
+        $Err = "Invalid name, only letters and white spaces allowed";
+    }
+    elseif( empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+        $Err = "Invalid Email";
+    }
+    elseif( empty($dbirth) ) {
+        $Err = "Date of birth not provided";
+    }
+    elseif( !valid_date($dbirth)){
+        $Err = "Date of birth not valid(yyyy/mm/dd)";
+    }
+    elseif( empty($upass) || empty($upass2) || ($upass!=$upass2) ) {
+        $Err = "Password does'nt match";
+    }
+    elseif( empty($gender) || $gender="" ) {
+        $Err = "Please select gender";
+    }
+    elseif( !preg_match('(Male|Female)', $gender) === 1 ) {
+        $Err = "Invalid gender";
+    }
+
+    if($Err!=""){
+        //if error msg found in registration form don't save to database
+        $msg = "
+		      <div class='alert alert-danger'>
+				<button class='close' data-dismiss='alert'>&times;</button>
+					<strong>Sorry !</strong> ".$Err."
+			  </div>
+			  ";
+    }else {
+        //if no error msg found in the registration form
+        $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userEmail=:email_id");
+        $stmt->execute(array(":email_id" => $email));
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($stmt->rowCount() > 0) {
+            $msg = "
+		      <div class='alert alert-danger'>
 				<button class='close' data-dismiss='alert'>&times;</button>
 					<strong>Sorry !</strong>  email allready exists , Please Try another one
 			  </div>
 			  ";
-	}
-	else
-	{
-		if($user_login->register($uname,$email,$upass,$code))
-		{			
-			$id = $user_login->lasdID();		
-			$key = base64_encode($id);
-			$id = $key;
-			
-			$message = "					
+        } else {
+            if ($user_login->register($uname, $email, $upass, $dbirth, $gender1, $code)) {
+                $id = $user_login->lasdID();
+                $key = base64_encode($id);
+                $id = $key;
+
+                $message = "					
 						Hello $uname,
 						<br /><br />
 						Welcome to Coding Cage!<br/>
@@ -56,27 +108,28 @@ if(isset($_POST['btn-signup']))
 						<a href='.SCRIPT_ROOT.'/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
 						<br /><br />
 						Thanks,";
-						
-			$subject = "Confirm Registration";
-						
-			$user_login->send_mail($email,$message,$subject);	
-			$msg = "
+
+                $subject = "Confirm Registration";
+
+                $user_login->send_mail($email, $message, $subject);
+                $msg = "
 					<div class='alert alert-success'>
 						<button class='close' data-dismiss='alert'>&times;</button>
 						<strong>Success!</strong>  We've sent an email to $email.
                     Please click on the confirmation link in the email to create your account. 
 			  		</div>
 					";
-		}
-		else
-		{
-			echo "sorry , Query could no execute...";
-		}		
-	}
+
+            } else {
+                echo "sorry , Query could no execute...";
+            }
+        }
+    }
+
 }
 
-if(isset($_GET['id']) && isset($_GET['code']))
-{
+//Email Verification
+if(isset($_GET['id']) && isset($_GET['code'])){
 	$id = base64_decode($_GET['id']);
 	$code = $_GET['code'];
 	
@@ -86,10 +139,8 @@ if(isset($_GET['id']) && isset($_GET['code']))
 	$stmt = $user_login->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:uID AND tokenCode=:code LIMIT 1");
 	$stmt->execute(array(":uID"=>$id,":code"=>$code));
 	$row=$stmt->fetch(PDO::FETCH_ASSOC);
-	if($stmt->rowCount() > 0)
-	{
-		if($row['userStatus']==$statusN)
-		{
+	if($stmt->rowCount() > 0){
+		if($row['userStatus']==$statusN){
 			$stmt = $user_login->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userID=:uID");
 			$stmt->bindparam(":status",$statusY);
 			$stmt->bindparam(":uID",$id);
@@ -101,19 +152,15 @@ if(isset($_GET['id']) && isset($_GET['code']))
 					  Thank you for validating your email.
 			       </div>
 			       ";	
-		}
-		else
-		{
+		}else{
 			$msg = "
 		           <div class='alert alert-error'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>sorry !</strong>  Your Account is allready Activated : <a href='#small-dialog'>Login here</a>
+					  <strong>sorry !</strong>  Your Account is already Activated : <a href='#small-dialog'>Login here</a>
 			       </div>
 			       ";
 		}
-	}
-	else
-	{
+	}else{
 		$msg = "
 		       <div class='alert alert-error'>
 			   <button class='close' data-dismiss='alert'>&times;</button>

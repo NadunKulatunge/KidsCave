@@ -75,6 +75,7 @@ if(isset($_GET['error'])){
 	<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3>LOGIN</h3>		
 		<div class="agileits_modal_body">
+            //This info will be sent to index.php (Top of index.php)
 			<form action="#" method="post">
 				<?php 
 				if(isset($_GET['inactive'])){
@@ -120,33 +121,68 @@ if(isset($_GET['error'])){
 			<h5>Don't have an account? <a href="#small-dialog1" class="play-icon popup-with-zoom-anim">Sign Up</a></h5>
 		</div>
 	</div>
+    <style>
+        .agileits_w3layouts_user input[type="date"]{
+            outline: none;
+            padding: 15px 10px 15px 80px;
+            font-size: 14px;
+            color: #212121;
+            border:2px solid #e0e0e0;
+            width: 100%;
+            font-weight:600;
+            line-height: 15px;
+        }
+        #gender {
+            outline: none;
+            padding: 15px 10px 15px 80px;
+            font-size: 14px;
+            color: #212121;
+            border:2px solid #e0e0e0;
+            width: 100%;
+            font-weight:600;
+            line-height: 15px;
+        }
+    </style>
 	<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3>Application Form</h3>		
 		<div class="agileits_modal_body">
+            <?php //This info will be sent to index.php (Top of index.php)?>
 			<form action="#" method="post">
 			<?php if(isset($msg)) echo $msg;  ?>
 				<h4>Profile information :</h4>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-user" aria-hidden="true"></i>
-					<input type="text" name="txtuname" placeholder="Full Name" required="">
+					<input type="text" name="txtuname" value="<?php if(isset($uname)){echo $uname;} ?>" placeholder="Full Name" required="">
 				</div>
+                <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <input type="date" name="txtdbirth" value="<?php if(isset($dbirth)){echo $dbirth;} ?>" placeholder="Date of Birth" required="">
+                </div>
+                <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+                    <i class="fa fa-venus" aria-hidden="true"></i>
+                    <select id="gender" name="gender" required>
+                        <option value="" >Gender</option>
+                        <option <?php if(isset($gender) && $gender=="Male"){echo "selected=\"true\"";} ?> value="Male">Male</option>
+                        <option <?php if(isset($gender) && $gender=="Female"){echo "selected=\"true\"";} ?>  value="Female">Female</option>
+                    </select>
+                </div>
 				<hr>
 				<h4>Login information :</h4>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-envelope-o" aria-hidden="true"></i>
-					<input type="email"  name="txtemail" placeholder="Email" required="">
+					<input type="email"  name="txtemail" value="<?php if(isset($email)){echo $email;} ?>" placeholder="Email" required="">
 				</div>
 				<div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
 					<i class="fa fa-key" aria-hidden="true"></i>
-					<input type="password" name="txtpass" placeholder="Password" required="">
+					<input type="password" name="txtpass" value="<?php if(isset($upass)){echo $upass;} ?>" placeholder="Password" required="">
 				</div>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-key" aria-hidden="true"></i>
-					<input type="password" name="Password" placeholder="Confirm Password" required="">
+					<input type="password" name="Password" value="<?php if(isset($upass2)){echo $upass2;} ?>" placeholder="Confirm Password" required="">
 				</div>
 				<div class="agileinfo_subscribe">
 					<div class="check">
-						<label class="checkbox"><input type="checkbox" name="checkbox" ><i> </i>i accept the terms and conditions</label>
+						<label class="checkbox"><input type="checkbox" name="checkbox" required><i> </i>i accept the terms and conditions</label>
 					</div>
 				</div>
 				<input type="submit" name="btn-signup">
