@@ -149,7 +149,7 @@ if(isset($_GET['error'])){
             <?php //This info will be sent to index.php (Top of index.php)?>
 			<form action="#" method="post">
 			<?php if(isset($msg)) echo $msg;  ?>
-				<h4>Profile information :</h4>
+				<h4>Child information :</h4>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-user" aria-hidden="true"></i>
 					<input type="text" name="txtuname" value="<?php if(isset($uname)){echo $uname;} ?>" placeholder="Full Name" required="">
