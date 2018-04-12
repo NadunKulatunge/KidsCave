@@ -75,7 +75,7 @@ if(isset($_GET['error'])){
 	<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3>LOGIN</h3>		
 		<div class="agileits_modal_body">
-            //This info will be sent to index.php (Top of index.php)
+            <?php //This info will be sent to index.php (Top of index.php) ?>
 			<form action="#" method="post">
 				<?php 
 				if(isset($_GET['inactive'])){
