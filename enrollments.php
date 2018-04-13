@@ -3,9 +3,13 @@ session_start();
 require_once 'class.user.php';
 $user_login = new USER();
 
-if(!$user_login->is_logged_in())
-{
+if(!$user_login->is_logged_in()){
 	$user_login->redirect('index.php');
+}
+
+//Restrict Access
+if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
+    $user_login->redirect('index.php');
 }
 
 $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
