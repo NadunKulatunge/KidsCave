@@ -25,7 +25,7 @@
                 {  
                      $query = "CALL insertUser('".$name."', '".$email."', '".$role."', '".$gender."', '".$birthday."', '".$classroom."')";
                      mysqli_query($connect, $query);  
-                     echo 'Data Inserted';  
+                     echo 'New user created';
                 }  
            }  
       }
@@ -54,30 +54,48 @@
                 }  
            }  
       }  
-      if($_POST["action"] == "Delete")  
+      if($_POST["action"] == "Disapprove" && $_SESSION['userRole']== "Admin")
       {  
            $procedure = "  
-           CREATE PROCEDURE deleteUser(IN ID int(11))  
+           CREATE PROCEDURE adminDisapproveUser(IN ID int(11))  
            BEGIN   
-                DELETE FROM tbl_users WHERE userID = ID; 
+                UPDATE tbl_users SET adminApprove = '0' WHERE userID = ID;  
            END;  
            ";  
-           if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS deleteUser"))
+           if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS adminDisapproveUser"))
            {  
                 if(mysqli_query($connect, $procedure))  
                 {  
-                     $query = "CALL deleteUser('".$_POST["id"]."')";
+                     $query = "CALL adminDisapproveUser('".$_POST["id"]."')";
                      mysqli_query($connect, $query);  
-                     echo 'Data Deleted';
+                     echo 'User Disapproved';
                 }  
            }  
       }
+     if($_POST["action"] == "Disapprove" && $_SESSION['userRole']== "Principal")
+     {
+         $procedure = "  
+           CREATE PROCEDURE principalDisapproveUser(IN ID int(11))  
+           BEGIN   
+                UPDATE tbl_users SET principalApprove = '0' WHERE userID = ID;  
+           END;  
+           ";
+         if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS principalDisapproveUser"))
+         {
+             if(mysqli_query($connect, $procedure))
+             {
+                 $query = "CALL principalDisapproveUser('".$_POST["id"]."')";
+                 mysqli_query($connect, $query);
+                 echo 'User Disapproved';
+             }
+         }
+     }
      if($_POST["action"] == "Approve" && $_SESSION['userRole']== "Admin")
      {
          $procedure = "  
                 CREATE PROCEDURE adminApproveUser(IN ID int(11))  
                 BEGIN   
-                UPDATE tbl_users SET adminApprove = '1' WHERE userID = ID;  
+                    UPDATE tbl_users SET adminApprove = '1' WHERE userID = ID;  
                 END;   
            ";
          if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS adminApproveUser"))
@@ -86,7 +104,7 @@
              {
                  $query = "CALL adminApproveUser('".$_POST["id"]."')";
                  mysqli_query($connect, $query);
-                 echo 'Data Updated';
+                 echo 'User Approved';
              }
          }
      }
@@ -104,7 +122,7 @@
              {
                  $query = "CALL principalApproveUser('".$_POST["id"]."')";
                  mysqli_query($connect, $query);
-                 echo 'Data Updated';
+                 echo 'User Approved';
              }
          }
      }

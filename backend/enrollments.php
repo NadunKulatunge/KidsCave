@@ -126,10 +126,10 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                 }  
            })  
       });  
-      $(document).on('click', '.delete', function(){  
+      $(document).on('click', '.disapprove', function(){
            var id = $(this).attr("id");  
-           if(confirm("Are you sure you want to remove this data?")){  
-                var action = "Delete";  
+           if(confirm("Are you sure you want to disapprove this user?")){
+                var action = "Disapprove";
                 $.ajax({  
                      url:"enrollments_ajax_action.php",
                      method:"POST",  

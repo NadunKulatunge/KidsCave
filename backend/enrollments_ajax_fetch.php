@@ -7,7 +7,7 @@
       $procedure = "  
       CREATE PROCEDURE whereUser(IN ID int(11))  
       BEGIN   
-      SELECT * FROM tbl_users WHERE userID = ID;
+          SELECT * FROM tbl_users WHERE userID = ID;
       END;   
       ";  
       if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS whereUser"))
