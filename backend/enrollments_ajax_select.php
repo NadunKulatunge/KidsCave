@@ -15,7 +15,7 @@
          $procedure = "  
               CREATE PROCEDURE selectUsers()  
               BEGIN  
-              SELECT * FROM tbl_users WHERE principalApprove IS NULL ORDER BY userID ASC;  
+              SELECT * FROM tbl_users WHERE principalApprove IS NULL ORDER BY userID ASC; 
               END;  
               ";
      }
@@ -32,7 +32,7 @@
                                <th>Email</th> 
                                <th>UserRole</th> 
                                <th>Gender</th>
-                               <th>Birthday</th> 
+                               <th>Birthday</th>
                                <th>Update</th>
                                <th>Approve</th>  
                                <th>Delete</th>  
@@ -48,7 +48,7 @@
                                     <td>'.$row["userEmail"].'</td>
                                     <td>'.$row["userRole"].'</td>  
                                     <td>'.$row["gender"].'</td> 
-                                    <td>'.$row["birthday"].'</td>  
+                                    <td>'.$row["birthday"].'</td> 
                                     <td><button type="button" name="update" id="'.$row["userID"].'" class="update btn btn-warning btn-xs">Update</button></td>
                                     <td><button type="button" name="approve" id="'.$row["userID"].'" class="approve btn btn-success btn-xs">Approve</button></td>  
                                     <td><button type="button" name="delete" id="'.$row["userID"].'" class="delete btn btn-danger btn-xs">Delete</button></td>  

@@ -45,6 +45,9 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                     <br />
                     <label>Birthday</label>
                         <input type="date" name="birthday" id="birthday" class="form-control"/>
+                    <br />
+                    <label>Class Room</label>
+                    <input type="text" name="classroom" id="classroom" class="form-control"/>
 					<br /><br />  
 					<div align="center">  
 						 <input type="hidden" name="id" id="user_id" />
@@ -74,6 +77,7 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                     $('#role').val('');
                     $('#genderEdit').val('');
                     $('#birthday').val('');
+                    $('#classroom').val('');
                     $('#action').text("Add");
                     $('#result').html(data);
                 }  
@@ -85,13 +89,14 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
           var role = $('#role').val();
           var gender = $('#genderEdit').val();
           var birthday = $('#birthday').val();
+          var classroom = $('#classroom').val();
           var id = $('#user_id').val();
           var action = $('#action').text();
-          if(name != '' && email != ''&& role != ''&& gender != ''&& birthday != ''){
+          if(name != '' && email != ''&& role != ''&& gender != ''&& birthday != '' && classroom != ''){
                 $.ajax({
                      url : "enrollments_ajax_action.php",
                      method:"POST",
-                     data:{name:name, email:email, role:role, gender:gender, birthday:birthday, id:id, action:action},
+                     data:{name:name, email:email, role:role, gender:gender, birthday:birthday, classroom:classroom, id:id, action:action},
                      success:function(data){
                           alert(data);
                           fetchUsers();
@@ -117,6 +122,7 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                     $('#role').val(data.role);
                     $('#genderEdit').val(data.gender);
                     $('#birthday').val(data.birthday);
+                    $('#classroom').val(data.classroom);
                 }  
            })  
       });  
