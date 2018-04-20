@@ -33,9 +33,10 @@
                                <th>UserRole</th> 
                                <th>Gender</th>
                                <th>Birthday</th>
-                               <th>Update</th>
-                               <th>Approve</th>  
-                               <th>Disapprove</th>  
+                               <th>Phone</th>
+                               <th>Edit</th>
+                               <th><i class="fa fa-check"></i></th>  
+                               <th><i class="fa fa-times"></i></th>  
                           </tr>  
                 ';  
                 if(mysqli_num_rows($result) > 0)  
@@ -49,9 +50,10 @@
                                     <td>'.$row["userRole"].'</td>  
                                     <td>'.$row["gender"].'</td> 
                                     <td>'.$row["birthday"].'</td> 
-                                    <td><button type="button" name="update" id="'.$row["userID"].'" class="update btn btn-warning btn-xs">Update</button></td>
-                                    <td><button type="button" name="approve" id="'.$row["userID"].'" class="approve btn btn-success btn-xs">Approve</button></td>  
-                                    <td><button type="button" name="disapprove" id="'.$row["userID"].'" class="disapprove btn btn-danger btn-xs">Disapprove</button></td>  
+                                    <td>'.$row["userPhone"].'</td> 
+                                    <td><button type="button" name="update" id="'.$row["userID"].'" class="update btn btn-warning btn-xs"><i class="fa fa-edit"></i></button></td>
+                                    <td><button type="button" name="approve" id="'.$row["userID"].'" class="approve btn btn-success btn-xs"><i class="fa fa-check"></i></button></td>  
+                                    <td><button type="button" name="disapprove" id="'.$row["userID"].'" class="disapprove btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>  
                                </tr>  
                           ';  
                      }  

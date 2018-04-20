@@ -23,6 +23,7 @@
                     $output['role'] = $row["userRole"];
                     $output['gender'] = $row["gender"];
                     $output['birthday'] = $row["birthday"];
+                    $output['phone'] = $row["userPhone"];
                     $output['classroom'] = $row["classID"];
                 }  
                 echo json_encode($output);  
