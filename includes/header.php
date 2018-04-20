@@ -57,7 +57,7 @@ if(isset($_GET['inactive'])){
 	</div>
 <?php
 }
-	?>
+?>
 
 <?php
 if(isset($_GET['error'])){
@@ -142,6 +142,16 @@ if(isset($_GET['error'])){
             font-weight:600;
             line-height: 15px;
         }
+        #txtphone {
+            outline: none;
+            padding: 15px 10px 15px 80px;
+            font-size: 14px;
+            color: #212121;
+            border:2px solid #e0e0e0;
+            width: 100%;
+            font-weight:600;
+            line-height: 20px;
+        }
     </style>
 	<div id="small-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
 		<h3>Application Form</h3>		
@@ -165,6 +175,10 @@ if(isset($_GET['error'])){
                         <option <?php if(isset($gender) && $gender=="Male"){echo "selected=\"true\"";} ?> value="Male">Male</option>
                         <option <?php if(isset($gender) && $gender=="Female"){echo "selected=\"true\"";} ?>  value="Female">Female</option>
                     </select>
+                </div>
+                <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <input id="txtphone" type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' name="txtphone" value="<?php if(isset($phone)){echo $phone;} ?>" placeholder="07X-XXX-XXXX" required="">
                 </div>
 				<hr>
 				<h4>Login information :</h4>

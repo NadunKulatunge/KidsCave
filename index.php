@@ -47,6 +47,7 @@ if(isset($_POST['btn-signup'])){
     $upass2 = test_input($_POST['Password']);
     $dbirth = test_input($_POST['txtdbirth']);
     $gender = test_input($_POST['gender']);
+    $phone = test_input($_POST['txtphone']);
     $gender1=$gender;
 	$code = md5(uniqid(rand()));
 
@@ -71,6 +72,9 @@ if(isset($_POST['btn-signup'])){
     elseif( !preg_match('(Male|Female)', $gender) === 1 ) {
         $Err = "Invalid gender";
     }
+    elseif( empty($phone) || !preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $phone) ){
+        $Err = "Invalid phone number format 07X-XXX-XXXX";
+    }
 
     if($Err!=""){
         //if error msg found in registration form don't save to database
@@ -94,7 +98,7 @@ if(isset($_POST['btn-signup'])){
 			  </div>
 			  ";
         } else {
-            if ($user_login->register($uname, $email, $upass, $dbirth, $gender1, $code)) {
+            if ($user_login->register($uname, $email, $upass, $dbirth, $gender1, $phone, $code)) {
                 $id = $user_login->lasdID();
                 $key = base64_encode($id);
                 $id = $key;
@@ -102,7 +106,7 @@ if(isset($_POST['btn-signup'])){
                 $message = "					
 						Hello $uname,
 						<br /><br />
-						Welcome to Coding Cage!<br/>
+						Welcome to KidsCave!<br/>
 						To complete your registration  please , just click following link<br/>
 						<br /><br />
 						<a href='.SCRIPT_ROOT.'/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>

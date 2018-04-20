@@ -84,13 +84,12 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
            });  
       }  
       $('#action').click(function(){  
-          var name = $('#name').val();
+          var name = $('#name').val()
           var email = $('#email').val();
           var role = $('#role').val();
           var gender = $('#genderEdit').val();
-          var birthday = $('#birthday').val();
-          var classroom = $('#classroom').val();
-          var id = $('#user_id').val();
+          var birthday = $('#birthdval();
+          var classroom = $('#classroom')var id = $('#user_id').val();
           var action = $('#action').text();
           if(name != '' && email != ''&& role != ''&& gender != ''&& birthday != '' && classroom != ''){
                 $.ajax({
