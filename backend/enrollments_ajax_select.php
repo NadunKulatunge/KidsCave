@@ -51,7 +51,7 @@
                                     <td>'.$row["birthday"].'</td> 
                                     <td><button type="button" name="update" id="'.$row["userID"].'" class="update btn btn-warning btn-xs">Update</button></td>
                                     <td><button type="button" name="approve" id="'.$row["userID"].'" class="approve btn btn-success btn-xs">Approve</button></td>  
-                                    <td><button type="button" name="disapprove" id="'.$row["userID"].'" class="delete btn btn-danger btn-xs">Disapprove</button></td>  
+                                    <td><button type="button" name="disapprove" id="'.$row["userID"].'" class="disapprove btn btn-danger btn-xs">Disapprove</button></td>  
                                </tr>  
                           ';  
                      }  
