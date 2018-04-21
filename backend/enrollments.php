@@ -35,19 +35,29 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
 					    <input type="text" name="name" id="name" class="form-control"/>
                     <br />
 					<label>Email</label>
-					    <input type="text" name="email" id="email" class="form-control"/>
+					    <input type="email" name="email" id="email" class="form-control"/>
                     <br />
                     <label>User Role</label>
-                        <input type="text" name="role" id="role" class="form-control"/>
+                        <select id="role" name="role" required class="form-control">
+                            <option value="" >User Role</option>
+                            <option value="Parent">Parent</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Principal">Principal</option>
+                        </select>
                     <br />
                     <label>Gender</label>
-                        <input type="text" name="genderEdit" id="genderEdit" class="form-control"/>
+                        <select id="genderEdit" name="genderEdit" required class="form-control">
+                            <option value="" >Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
                     <br />
                     <label>Birthday</label>
                         <input type="date" name="birthday" id="birthday" class="form-control"/>
                     <br />
                     <label>Phone</label>
-                        <input type="text" name="phone" id="phone" class="form-control"/>
+                        <input type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder="07X-XXX-XXXX" name="phone" id="phone" class="form-control"/>
                     <br />
                     <label>Class Room</label>
                     <input type="text" name="classroom" id="classroom" class="form-control"/>
