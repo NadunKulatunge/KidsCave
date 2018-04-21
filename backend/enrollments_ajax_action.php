@@ -16,6 +16,7 @@
           $phone = test_input($_POST["phone"]);
           $classroom = test_input($_POST["classroom"]);
 
+
           //validate
           if(!valid_name($name)){
               $Err = "Invalid name";
@@ -36,16 +37,16 @@
           }
 
            $procedure = "  
-                CREATE PROCEDURE insertUser(IN name varchar(100), email varchar(100), role varchar(9), gender varchar(6), birthday varchar(10), phone varchar(12), classroom int(11) )  
+                CREATE PROCEDURE insertUser(IN name varchar(100), email varchar(100), role varchar(9), gender varchar(6), birthday varchar(10), phone varchar(12), classroom int(11), randPassword varchar(100) )  
                 BEGIN 
-                    INSERT INTO tbl_users(userName, userEmail, userRole, classID, gender, birthday, userPhone) VALUES (name, email, role, classroom, gender, birthday, phone);
+                    INSERT INTO tbl_users(userName, userEmail, userRole, classID, gender, birthday, userPhone, userPass) VALUES (name, email, role, classroom, gender, birthday, phone, randPassword);
                 END;  
            ";  
            if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS insertUser")) {
 
                if($Err=="") {
                    if (mysqli_query($connect, $procedure)) {
-                       $query = "CALL insertUser('" . $name . "', '" . $email . "', '" . $role . "', '" . $gender . "', '" . $birthday . "', '" . $phone . "', '" . $classroom . "')";
+                       $query = "CALL insertUser('" . $name . "', '" . $email . "', '" . $role . "', '" . $gender . "', '" . $birthday . "', '" . $phone . "', '" . $classroom . "', '" . md5($phone) . "')";
                        mysqli_query($connect, $query);
                        echo 'New user created';
                    }
