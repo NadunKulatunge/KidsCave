@@ -21,6 +21,8 @@
               $Err = "Invalid name";
           }elseif(!valid_email($email)){
               $Err = "Invalid email";
+          }elseif(!isAvailable_email($email,$connect)){
+              $Err = "Email address is available";
           }elseif(!valid_role($role)){
               $Err = "Invalid role";
           }elseif(!valid_gender($gender)){
@@ -55,7 +57,7 @@
       }
       if($_POST["action"] == "Edit") {
           $name = test_input($_POST["name"]);
-          $email = test_input($_POST["email"]);
+        //$email = test_input($_POST["email"]);
           $role = test_input($_POST["role"]);
           $gender = test_input($_POST["gender"]);
           $birthday = test_input($_POST["birthday"]);
@@ -65,8 +67,6 @@
             //validate
           if(!valid_name($name)){
               $Err = "Invalid name";
-          }elseif(!valid_email($email)){
-              $Err = "Invalid email";
           }elseif(!valid_role($role)){
               $Err = "Invalid role";
           }elseif(!valid_gender($gender)){
@@ -79,15 +79,15 @@
               $Err = "Invalid classroom";
           }
            $procedure = "  
-                CREATE PROCEDURE updateUser(IN ID int(11), name varchar(100), email varchar(100), role varchar(9), gender varchar(6), birthday varchar(10), phone varchar(12), classroom int(11) )  
+                CREATE PROCEDURE updateUser(IN ID int(11), name varchar(100), role varchar(9), gender varchar(6), birthday varchar(10), phone varchar(12), classroom int(11) )  
                 BEGIN
-                    UPDATE tbl_users SET userName = name, userEmail = email, userRole = role, classID = classroom, gender = gender, birthday = birthday, userPhone = phone WHERE userID = ID;        
+                    UPDATE tbl_users SET userName = name, userRole = role, classID = classroom, gender = gender, birthday = birthday, userPhone = phone WHERE userID = ID;        
                 END;   
            ";
            if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS updateUser")) {
                if($Err=="") {
                    if (mysqli_query($connect, $procedure)) {
-                       $query = "CALL updateUser('" . $_POST["id"] . "', '" . $name . "', '" . $email . "', '" . $role . "', '" . $gender . "', '" . $birthday . "', '" . $phone . "', '" . $classroom . "')";
+                       $query = "CALL updateUser('" . $_POST["id"] . "', '" . $name . "', '" . $role . "', '" . $gender . "', '" . $birthday . "', '" . $phone . "', '" . $classroom . "')";
                        mysqli_query($connect, $query);
                        echo 'Data Updated';
                    }

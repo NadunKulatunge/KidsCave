@@ -24,12 +24,23 @@ function valid_name($data) {
         return true;        //Valid
     }
 }
+
 function valid_email($data) {
     if ( empty($data) || !filter_var($data, FILTER_VALIDATE_EMAIL) ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
     }
+}
+function isAvailable_email($data,$connect){
+    $query = "SELECT * FROM tbl_users WHERE userEmail='$data'";
+    $result = mysqli_query($connect,$query);
+    if (mysqli_num_rows($result) == 0){
+        return true;    //valid
+    }else{
+        return false;   //Invalid
+    }
+
 }
 function valid_password($data1,$data2) {
     if ( empty($data1) || empty($data2) || ($data1!=$data2) ) {
@@ -63,7 +74,6 @@ function valid_classroom($data,$connect) {
     if ( empty($data) || $data=="" || !is_int ( $data )) {
         return false;       //Invalid
     }else{
-        echo $data;
         $query = "SELECT * FROM class WHERE classID='$data'";
         $result = mysqli_query($connect,$query);
         if (mysqli_num_rows($result) != 0){
