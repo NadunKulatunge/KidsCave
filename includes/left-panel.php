@@ -67,7 +67,7 @@ if($_SESSION['userRole']=="Parent"){
 	echo'<div class="col-md-3 left_panel_menu">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/timetable.php">TimeTable</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
@@ -82,7 +82,7 @@ if($_SESSION['userRole']=="Parent"){
 	echo'<div class="col-md-3 left_panel_menu ">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/timetable.php">TimeTable</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/enrollments.php">Enrollments</a></li>
