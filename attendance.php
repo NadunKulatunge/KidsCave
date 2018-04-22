@@ -27,11 +27,87 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			<?php include('includes/left-panel.php'); ?>
 			<!-- //left panel -->
 			<!-- right panel -->
-			<div class="col-md-9">.col-md-6</div>
+			<div class="col-md-9" >
+				<form action="">
+					<select name="class" onchange="showClass(this.value)">
+						<option value="">Select the Class:</option>
+						<option value="classA">ClassA</option>
+						<option value="classB ">ClassB</option>
+						<option value="classC">ClassC</option>
+					</select>
+				</form>
+				<span id="txtHint"></span>
+				<div id="result"></div>
+			</div>
 			<!-- right panel -->
 		</div>
 	</div>
 </div>
+<script>
+function showClass(str) {
+    if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+		//console.log(xmlhttp)
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "attendance_ajax_show.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+<script>
+
+$(document).ready(function(){
+	//if (document.getElementsByClassName("a").checked){
+		//console.log(document.getElementsByClassName("a").checked)
+	$(document).on('click','input[type="radio"]', function(){
+	//$('input[type="radio"]').click(function(){ 
+		if (this.checked) {
+			console.log(this.checked) 
+           var status1 = $(this).val();
+			var id = $(this).attr("id"); 
+		   console.log(id) 
+           $.ajax({  
+                url:"attendance_ajax_submit.php",  
+                method:"POST",  
+                data:{status1:status1,id:id}, 
+ 
+                success:function(data){  
+                     $('#result').html(data);  
+                }  
+           });
+		}  
+      });
+	 
+});
+</script>
+<script>
+
+$(document).ready(function(){
+	$(document).on('click','.update', function(){
+		if (document.getElementsByClassName("a").checked){
+			var id = $(this).attr("id"); 
+		   console.log(id) 
+           $.ajax({  
+                url:"attendance_ajax_submit.php",  
+                method:"POST",  
+                data:{id:id}, 
+ 
+                success:function(data){  
+                     $('#result').html(data);  
+                }  
+           }); 
+		} 
+      });  
+});
+</script>
+
 <!-- footer -->
 <?php include('includes/footer.php'); ?>
 <!-- //footer -->
