@@ -84,6 +84,23 @@ function valid_classroom($data,$connect) {
     }
 }
 
+///Payments Page Validations
+function valid_description($data) {
+    if ( empty($data) || !preg_match("/^[a-zA-Z0-9 ]*$/",$data) ) {
+        return false;       //Invalid
+    }else{
+        return true;        //Valid
+    }
+}
+function valid_amount($data) {
+    if ( empty($data) || !preg_match("/^[0-9]*$/",$data) ) {
+        return false;       //Invalid
+    }else{
+        return true;        //Valid
+    }
+}
+
+
 ?>
 <?php
 //close connections
