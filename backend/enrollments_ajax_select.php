@@ -72,3 +72,7 @@
       }  
  }  
  ?>
+ <?php
+ //close connections
+ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/close_connections.php');
+ ?>
