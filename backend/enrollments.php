@@ -2,6 +2,7 @@
 session_start();
 require_once '../class.user.php';
 $user_login = new USER();
+include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
 
 if(!$user_login->is_logged_in()){
 	$user_login->redirect('../index.php');
@@ -60,7 +61,22 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                         <input type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder="07X-XXX-XXXX" name="phone" id="phone" class="form-control"/>
                     <br />
                     <label>Class Room</label>
-                    <input type="text" name="classroom" id="classroom" class="form-control"/>
+                <?php
+                $query = "SELECT classID, className  FROM class";
+                $result = mysqli_query($connect,$query);
+                $output = '<select id="classroom" name="classroom" required class="form-control">';
+                if(mysqli_num_rows($result) > 0) {
+                     while($row = mysqli_fetch_array($result)) {
+                          $output .= '
+                            <option value="'.$row["classID"].'" >'.$row["className"].'</option>
+                          ';
+                     }
+                }else{
+                    $output .= '<option value="" >There are no classes</option>';
+                }
+                $output .= '</select>';
+                echo $output;
+                ?>
 					<br /><br />  
 					<div align="center">  
 						 <input type="hidden" name="id" id="user_id" />
