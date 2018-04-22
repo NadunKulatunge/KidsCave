@@ -10,9 +10,9 @@
            $totalAmount = test_input($_POST["totalAmount"]);
 
           //validate
-          if(!valid_description($description)){
+          if(!valid_payment_description($description)){
               $Err = "Invalid description";
-          }elseif(!valid_amount($totalAmount)){
+          }elseif(!valid_payment_amount($totalAmount)){
               $Err = "Invalid amount";
           }
 
@@ -41,9 +41,9 @@
            $totalAmount = test_input($_POST["totalAmount"]);
 
           //validate
-          if(!valid_description($description)){
+          if(!valid_payment_description($description)){
               $Err = "Invalid description";
-          }elseif(!valid_amount($totalAmount)){
+          }elseif(!valid_payment_amount($totalAmount)){
               $Err = "Invalid amount";
           }
 

@@ -18,7 +18,7 @@ function valid_date($data) {
 }
 
 function valid_name($data) {
-    if ( empty($data) || !preg_match("/^[a-zA-Z ]*$/",$data) ) {
+    if ( empty($data) || !preg_match("/^[a-zA-Z ]*$/",$data) || strlen($data)<2 || strlen($data)>100 ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
@@ -26,7 +26,7 @@ function valid_name($data) {
 }
 
 function valid_email($data) {
-    if ( empty($data) || !filter_var($data, FILTER_VALIDATE_EMAIL) ) {
+    if ( empty($data) || !filter_var($data, FILTER_VALIDATE_EMAIL) || strlen($data)>100 ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
@@ -85,15 +85,15 @@ function valid_classroom($data,$connect) {
 }
 
 ///Payments Page Validations
-function valid_description($data) {
-    if ( empty($data) || !preg_match("/^[a-zA-Z0-9 ]*$/",$data) ) {
+function valid_payment_description($data) {
+    if ( empty($data) || !preg_match("/^[a-zA-Z0-9 ]*$/",$data) || strlen($data)<2 || strlen($data)>100 ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
     }
 }
-function valid_amount($data) {
-    if ( empty($data) || !preg_match("/^[0-9]*$/",$data) ) {
+function valid_payment_amount($data) {
+    if ( empty($data) || !preg_match("/^[0-9]*$/",$data) || $data==0 || $data>10000000 ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
