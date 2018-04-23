@@ -15,7 +15,6 @@
    if(mysqli_num_rows($result1) > 0)
 
     {
-        echo mysqli_num_rows($result1); 
       ?>
      <script >
      var r = confirm('Do you wnat to change status');
@@ -28,8 +27,7 @@
 <?php    
 }
   else{
-      echo mysqli_num_rows($result1);
-  $query = "INSERT INTO student_attendance(status, studentID,date) VALUES ('".$_POST['status1']."','".$_POST['id']."','$date')";
+  $query = "INSERT INTO student_attendance(status, studentID,date,classID) VALUES ('".$_POST['status1']."','".$_POST['id']."','$date','".$_POST['cl']."')";
       $connect->exec($query);
       echo "Doesn't exist";
   }
