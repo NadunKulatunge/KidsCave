@@ -116,7 +116,8 @@ $(document).ready(function(){
 $('#view').click(function(){ 
 		   var class1=$('input[name=class1]:checked').val();  
            var day =$('input[name=day]:checked').val();
-           if(class1 != '' && day != ''){  
+           if(class1 != undefined && day != undefined){
+               console.log(class1)  
                 $.ajax({  
                      url : "timetable_ajax_show.php",  
                      method:"POST",  
