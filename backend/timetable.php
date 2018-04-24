@@ -52,9 +52,8 @@ news{display: none;}
 				<label>New Subject Name:</label>
 					<input type='text' name="subject"></br>
 				<label>Select Teacher Name:</label>  
-					<input type="radio" value =12 name="tname" id=1 />fff
-					<input type="radio"  value =13 name="tname" id=2 />ggg
-					<input type="radio" value =14 name="tname" id=3 />ggg
+					<input type="radio" value =12 name="tname" id=1 />Abdullah Lang
+					<input type="radio"  value =13 name="tname" id=2 />Marcus Cruz
 					<br />
 				<button type="button" class="btn btn-success btn-xs" id='add'>Add</button> </br></br>
 
