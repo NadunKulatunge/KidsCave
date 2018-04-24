@@ -1,7 +1,7 @@
 	<div class="w3_agileits_twitter_post">
 		<div class="container">
 			<h4>"Pellentesque habitant morbi tristique senectus et netus <a href="#">
-				http://example.com</a> egestas."</h4>
+				https://www.kidscave.com</a> egestas."</h4>
 		</div>
 	</div>
 	<div class="footer">
@@ -36,9 +36,9 @@
 				<div class="col-md-5 wthree_footer_grid_right1">
 					<h5>Contact Us</h5>
 					<ul>
-						<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-						<li><i class="fa fa-phone" aria-hidden="true"></i>+(000) 123 311</li>
-						<li><i class="fa fa-fax" aria-hidden="true"></i>+123 421</li>
+						<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@kidscave.com</a></li>
+						<li><i class="fa fa-phone" aria-hidden="true"></i> +(94) 011 458 3763</li>
+						<li><i class="fa fa-fax" aria-hidden="true"></i> +(94) 011 458 3763</li>
 					</ul>
 				</div>
 				<div class="col-md-7 wthree_footer_grid_right2">
