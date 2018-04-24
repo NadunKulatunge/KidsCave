@@ -189,9 +189,9 @@ if(isset($_GET['id']) && isset($_GET['code'])){
 		<div class="center-container">
 			<div class="container">
 				<div class="w3_agile_banner_info">
-					<p class="w3_agileits_banner_para"><span>w3layouts Presents</span></p>
+					<p class="w3_agileits_banner_para"><span>KidsCave Presents</span></p>
 					<div class="agileits_w3layouts_header">
-						<h2 class="test2">child care homes for <i>happy families</i></h2>
+						<h2 class="test2">World class Nursery for <i>happy childern</i></h2>
 					</div>
 					<p class="w3_elit_para">Duis in condimentum elit, fermentum vestibulum tellus. In dapibus non orci in tempus.</p>
 					<div class="agile_more">
@@ -896,7 +896,7 @@ if(isset($_GET['id']) && isset($_GET['code'])){
 					</div>
 					<div class="col-xs-8 agile_contact_grid_right agileits_w3layouts_right">
 						<h4>Phone</h4>
-						<p>+(1234) 2332 232 <span>+(1236) 2334 232</span></p>
+						<p>+(94) 011 458 3763<span>+(94) 011 458 3764</span></p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -906,8 +906,8 @@ if(isset($_GET['id']) && isset($_GET['code'])){
 					</div>
 					<div class="col-xs-8 agile_contact_grid_right agileits_w3layouts_right1">
 						<h4>Email</h4>
-						<p><a href="mailto:info@example.com">info@example1.com</a>
-							<span><a href="mailto:info@example.com">info@example2.com</a></span></p>
+						<p><a href="mailto:info@kidscave.com">info@kidscave.com</a>
+							<span><a href="mailto:admin@kidscave.com">admin@kidcave.com</a></span></p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
