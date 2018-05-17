@@ -49,7 +49,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         $child = $_POST ["child"];
 
                         $output = '';
-                        $query = "SELECT tbl_users.userID,student_details.ChildName, student_details.DateofBirth,tbl_users.userName, tbl_users.userEmail ,student_details.MobileNo, student_details.LandNo,student_details.Address FROM tbl_users,student_details WHERE tbl_users.userID=student_details.userID AND tbl_users.userRole=\"Parent\" AND tbl_users.adminApprove =\"1\" AND tbl_users.principalApprove=\"1\";";
+                        $query = "SELECT tbl_users.userID,student_details.ChildName,student_details.Gender, student_details.DateofBirth,tbl_users.userName, tbl_users.userEmail ,student_details.MobileNo, student_details.LandNo,student_details.Address FROM tbl_users,student_details WHERE tbl_users.userID=student_details.userID AND tbl_users.userRole=\"Parent\" AND tbl_users.adminApprove =\"1\" AND tbl_users.principalApprove=\"1\" AND '$child'=ChildName;";
                         $result = mysqli_query($connect, $query);
 
                         if(mysqli_num_rows($result) > 0) {
@@ -62,11 +62,13 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                <th width="50%" class="text-center">'.$row["userID"].'</th></tr><tr>
                                <th width="50%" class="text-center">Child Name</th>  
                                <th width="50%" class="text-center">'.$row["ChildName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Gender</th>  
+                               <th width="50%" class="text-center">'.$row["Gender"].'</th></tr><tr>
                                <th width="50%" class="text-center">Date of Birth</th>  
                                <th width="50%" class="text-center">'.$row["DateofBirth"].'</th></tr><tr>
-                               <th width="50%" class="text-center">User Name</th>  
+                               <th width="50%" class="text-center">Parent Name</th>  
                                <th width="50%" class="text-center">'.$row["userName"].'</th></tr><tr>
-                               <th width="50%" class="text-center">UserEmail</th>  
+                               <th width="50%" class="text-center">Parent Email</th>  
                                <th width="50%" class="text-center">'.$row["userEmail"].'</th></tr><tr>
                                <th width="50%" class="text-center">Mobile</th>  
                                <th width="50%" class="text-center">'.$row["MobileNo"].'</th></tr><tr>
