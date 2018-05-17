@@ -40,7 +40,6 @@ if($_SESSION['userRole']=="Parent"){
 	echo'<div class="col-md-3 left_panel_menu ">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/enterdetails.php">Enter child Details</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
