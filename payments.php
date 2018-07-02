@@ -99,30 +99,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} elseif( ($amountpaid != 0) && ($_POST["PaymentDurationOption"]=="Year") ) {
 		$paymentDurationErr = "You cannot pay for a year";
 		
-	} elseif( ($_POST["PaymentDurationOption"]=="Year") ){
+	} elseif( ($_POST["PaymentDurationOption"]=="Year") ){ //Payment for Year Validation
 		$paymentDuration = $_POST["PaymentDurationOption"];
 		$newdate1 = strtotime ( '+12 months' , strtotime($startDate) ) ; //adding 12 months into start date
 		$newdate1 = date ( 'Y-m-j' , $newdate1 );
 		
-		$totalAmount = $total;
-		$discount = 15;
-		$amountPaid = ($total*0.85);
+		$totalAmount = $total; //amount user has to pay before discount
+		$discount = 15; //discount for year payments
+		$amountPaid = ($total*0.85); //amount user has to pay after discount
 		
 		
-	}elseif( ($_POST["PaymentDurationOption"]=="Term") ){	
+	}elseif( ($_POST["PaymentDurationOption"]=="Term") ){	//Payment for Term Validation
 		$paymentDuration = $_POST["PaymentDurationOption"];			
 		$newdate1 = strtotime ( '+4 months' , strtotime($startDate) ) ; //adding 4 months into start date
 		$newdate1 = date ( 'Y-m-j' , $newdate1 );
 		
 		
-		if($dueAmount<($total/3)){
-			$totalAmount = $dueAmount;
+		if($dueAmount<($total/3)){ //due amount is less than normal term payment
+			$totalAmount = $dueAmount; //amount user has to pay before discount
 			$discount = 0;
-			$amountPaid = $dueAmount;
+			$amountPaid = $dueAmount; //amount user has to pay after discount
 		}else{
-			$totalAmount = $total/3;
+			$totalAmount = $total/3; //amount user has to pay before discount
 			$discount = 0;
-			$amountPaid = $total/3;
+			$amountPaid = $total/3; //amount user has to pay after discount
 		}
 		
 		
@@ -388,8 +388,8 @@ function termEnable() {
 	document.getElementById("TotalPayment").innerHTML = "<?php echo "Rs " .$amounttopay; ?>";	
 }
 function yearEnable() {
-    document.getElementById("DiscountPercentage").innerHTML = "0 %";
-	document.getElementById("TotalPayment").innerHTML = "<?php echo "Rs " .$dueAmount; ?>";	
+    document.getElementById("DiscountPercentage").innerHTML = "15 %";
+	document.getElementById("TotalPayment").innerHTML = "<?php echo "Rs " .$dueAmount*0.85; ?>";
 }
 </script>
 <!-- footer -->

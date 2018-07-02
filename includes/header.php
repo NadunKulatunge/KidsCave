@@ -166,7 +166,7 @@ if(isset($_GET['error'])){
 				</div>
                 <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <input type="date" name="txtdbirth" value="<?php if(isset($dbirth)){echo $dbirth;} ?>" placeholder="Date of Birth" required="">
+                    <input type="date" name="txtdbirth" value="<?php if(isset($dbirth)){echo $dbirth;} ?>" placeholder="Date of Birth" required="" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>">
                 </div>
                 <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
                     <i class="fa fa-venus" aria-hidden="true"></i>
@@ -178,7 +178,7 @@ if(isset($_GET['error'])){
                 </div>
                 <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <input id="txtphone" type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' name="txtphone" value="<?php if(isset($phone)){echo $phone;} ?>" placeholder="07X-XXX-XXXX" required="">
+                    <input id="txtphone" type="tel" pattern='[0-9]{10}' name="txtphone" value="<?php if(isset($phone)){echo $phone;} ?>" placeholder="07X XXX XXX" required="">
                 </div>
 				<hr>
 				<h4>Login information :</h4>

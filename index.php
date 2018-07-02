@@ -72,8 +72,8 @@ if(isset($_POST['btn-signup'])){
     elseif( !preg_match('(Male|Female)', $gender) === 1 ) {
         $Err = "Invalid gender";
     }
-    elseif( empty($phone) || !preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $phone) ){
-        $Err = "Invalid phone number format 07X-XXX-XXXX";
+    elseif( empty($phone) || !preg_match("/^[0-9]{10}$/", $phone) ){
+        $Err = "Invalid phone number format 07X XXX XXXX";
     }
 
     if($Err!=""){
