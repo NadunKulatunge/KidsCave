@@ -49,7 +49,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         $child = $_POST ["child"];
 
                         $output = '';
-                        $query = "SELECT * FROM student_guardian WHERE '$child'=firstName;";
+                        $query = "SELECT tbl_users.userID,student_details.ChildName,student_details.Gender, student_details.DateofBirth,tbl_users.userName, tbl_users.userEmail ,student_details.MobileNo, student_details.LandNo,student_details.Address FROM tbl_users,student_details WHERE tbl_users.userID=student_details.userID AND tbl_users.userRole=\"Parent\" AND tbl_users.adminApprove =\"1\" AND tbl_users.principalApprove=\"1\" AND '$child'=ChildName;";
                         $result = mysqli_query($connect, $query);
 
                         if(mysqli_num_rows($result) > 0) {
@@ -58,22 +58,25 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         <table class="table table-bordered">  
                           <tr> 
                                <br>
-                               <th width="50%" class="text-center">Student Guardian ID</th>  
-                               <th width="50%" class="text-center">'.$row["student_guardianID"].'</th></tr><tr>
                                <th width="50%" class="text-center">User ID</th>  
                                <th width="50%" class="text-center">'.$row["userID"].'</th></tr><tr>
-                               <th width="50%" class="text-center">First Name</th>  
-                               <th width="50%" class="text-center">'.$row["firstName"].'</th></tr><tr>
-                               <th width="50%" class="text-center">Last Name</th>  
-                               <th width="50%" class="text-center">'.$row["lastName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Child Name</th>  
+                               <th width="50%" class="text-center">'.$row["ChildName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Gender</th>  
+                               <th width="50%" class="text-center">'.$row["Gender"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Date of Birth</th>  
+                               <th width="50%" class="text-center">'.$row["DateofBirth"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Parent Name</th>  
+                               <th width="50%" class="text-center">'.$row["userName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Parent Email</th>  
+                               <th width="50%" class="text-center">'.$row["userEmail"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Mobile</th>  
+                               <th width="50%" class="text-center">'.$row["MobileNo"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Phone</th>  
+                               <th width="50%" class="text-center">'.$row["LandNo"].'</th></tr><tr>
                                <th width="50%" class="text-center">Address</th>  
                                <th width="50%" class="text-center">'.$row["Address"].'</th></tr><tr>
-                               <th width="50%" class="text-center">Mobile</th>  
-                               <th width="50%" class="text-center">'.$row["Mobile"].'</th></tr><tr>
-                               <th width="50%" class="text-center">Phone</th>  
-                               <th width="50%" class="text-center">'.$row["Phone"].'</th></tr><tr>
-                               <th width="50%" class="text-center">Student ID</th>  
-                               <th width="50%" class="text-center">'.$row["studentID"].'</th></tr><tr>
+                               
                           </tr> </table>
                            ';
                             echo $output ;
