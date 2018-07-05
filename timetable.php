@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once 'class.user.php';
+require_once 'backend/class.user.php';
 include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
-$user_login = new USER();
+$user_login = new User();
 
 
 if(!$user_login->is_logged_in())

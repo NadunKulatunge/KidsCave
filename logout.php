@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'class.user.php';
-$user = new USER();
+require_once 'backend/class.user.php';
+$user = new User();
 
 if(!$user->is_logged_in())
 {

@@ -6,8 +6,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <?php
 session_start();
-require_once 'class.user.php';
-$user_login = new USER();
+require_once 'backend/class.user.php';
+$user_login = new User();
 
 function test_input($data) {
     $data = trim($data);

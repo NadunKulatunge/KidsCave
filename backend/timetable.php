@@ -1,8 +1,9 @@
 <?php
 
 session_start();
-require_once '../class.user.php';
-$user_login = new USER();
+require_once 'dbconfig.php';
+require_once 'class.user.php';
+$user_login = new User();
 
 if(!$user_login->is_logged_in()){
 	$user_login->redirect('../index.php');
