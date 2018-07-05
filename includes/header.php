@@ -166,7 +166,7 @@ if(isset($_GET['error'])){
 				</div>
                 <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <input type="date" name="txtdbirth" value="<?php if(isset($dbirth)){echo $dbirth;} ?>" placeholder="Date of Birth" required="" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>">
+                    <input type="date" name="txtdbirth" value="<?php if(isset($dbirth)){echo $dbirth;} ?>" placeholder="Date of Birth" required="" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>" min="<?php echo date("Y-m-d",strtotime("-5 years")); ?>">
                 </div>
                 <div class="agileits_w3layouts_user agileits_w3layouts_user_agileits">
                     <i class="fa fa-venus" aria-hidden="true"></i>
