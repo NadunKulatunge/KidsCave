@@ -76,6 +76,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Nadun Kulatunge** - [NadunKulatunge](https://github.com/NadunKulatunge)
+* **Isuru Chamara** - [icpinto](https://github.com/icpinto)
+* **Jenarthana Jenarthanan** - [Jenarthanan14](https://github.com/Jenarthanan14)
+* **Chanuka Dissanayaka** - [chanukaDissanayaka](https://github.com/chanukaDissanayaka)
 
 See also the list of [contributors](https://github.com/NadunKulatunge/KidsCave/graphs/contributors) who participated in this project.
 
