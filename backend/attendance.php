@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once 'class.user.php';
+require_once '../class.user.php';
 $user_login = new USER();
 
 if(!$user_login->is_logged_in())
 {
-	$user_login->redirect('index.php');
+	$user_login->redirect('../index.php');
 }
 
 $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
@@ -15,16 +15,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!-- top html header -->
-<?php include('includes/top-header.php'); ?>
+<?php include('../includes/top-header.php'); ?>
 <!-- //top html header -->
 <!-- header -->
-<?php include('includes/header.php'); ?>
+<?php include('../includes/header.php'); ?>
 <!-- //header -->
 <div style="min-height: calc(100vh - 190px); margin-top: 1em; margin-bottom:3em;">
 	<div class="container" ><div style =" border-bottom:2px solid #14a1ff;"><h1>Attendance</h1></div><br>
 		<div class="row" >
 			<!-- left panel -->
-			<?php include('includes/left-panel.php'); ?>
+			<?php include('../includes/left-panel.php'); ?>
 			<!-- //left panel -->
 			<!-- right panel -->
 			<div class="col-md-9" >
@@ -70,16 +70,12 @@ function showClass(int) {
 <script>
 
 $(document).ready(function(){
-	//if (document.getElementsByClassName("a").checked){
-		//console.log(document.getElementsByClassName("a").checked)
 	$(document).on('click','input[type="radio"]', function(){
 	//$('input[type="radio"]').click(function(){ 
 		if (this.checked) {
 			var cl= $('select[name=class1]').val();
-			console.log(cl) ;
            var status1 = $(this).val();
-			var id = $(this).attr("id"); 
-		   console.log(id) 
+			var id = $(this).attr("id");  
            $.ajax({  
                 url:"attendance_ajax_submit.php",  
                 method:"POST",  
@@ -121,7 +117,8 @@ $(document).ready(function(){
             success:function(data){
 				$('#st').html(data);
             }
-        }); 
+        });
+		
       });
 });
 </script>

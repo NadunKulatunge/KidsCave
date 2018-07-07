@@ -17,26 +17,18 @@
     {
       ?>
      <script >
-     var r = confirm('Do you wnat to change status');
-    if (r == true) {     
+       alert('You have changed status');
+         
        <?php  $sql = "UPDATE student_attendance SET status='".$_POST['status1']."' WHERE (studentID ='".$_POST['id']."' AND `date`='$date')"; 
         $connect->exec($sql);    ?>
         var txt = "You pressed OK!";
-    }
      </script>
 <?php    
 }
   else{
   $query = "INSERT INTO student_attendance(status, studentID,date,classID) VALUES ('".$_POST['status1']."','".$_POST['id']."','$date','".$_POST['cl']."')";
       $connect->exec($query);
-      $query2="SELECT birthday FROM student WHERE (studentID ='".$_POST['id']."' AND birthday='$date')";
-      $result2=mysqli_query($conn,$query2);
-      if(mysqli_num_rows($result1) == 0){?>
-      <script>
-      alert("Today is Birthday!!!")
-      </script>
-
-      <?php }
+      
   }
   }
 else{

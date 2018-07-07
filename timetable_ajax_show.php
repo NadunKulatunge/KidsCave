@@ -1,6 +1,3 @@
-<!--$sql="SELECT * FROM user WHERE id = '".$q."'";-->
-
-
 <?php
 $con = mysqli_connect("localhost", "root", "", "kidscave");
 if (!$con) {

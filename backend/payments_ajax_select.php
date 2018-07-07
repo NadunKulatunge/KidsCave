@@ -19,10 +19,10 @@
                 $output .= '  
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="35%">Description</th>  
-                               <th width="35%">Amount</th>  
-                               <th width="15%">Update</th>  
-                               <th width="15%">Delete</th>  
+                               <th width="35%" class="text-center">Description</th>  
+                               <th width="35%" class="text-center">Amount (Rs)</th>  
+                               <th width="15%" class="text-center">Update</th>  
+                               <th width="15%" class="text-center">Delete</th>  
                           </tr>  
                 ';  
                 if(mysqli_num_rows($result) > 0)  
@@ -32,9 +32,9 @@
                           $output .= '  
                                <tr>  
                                     <td>'.$row["description"].'</td>  
-                                    <td>'.$row["totalAmount"].'</td>  
-                                    <td><button type="button" name="update" id="'.$row["studentPaymentDetailID"].'" class="update btn btn-warning btn-xs">Update</button></td>  
-                                    <td><button type="button" name="delete" id="'.$row["studentPaymentDetailID"].'" class="delete btn btn-danger btn-xs">Delete</button></td>  
+                                    <td  class="text-right">'.number_format($row["totalAmount"],2).'</td>  
+                                    <td class="text-center"><button type="button" name="update" id="'.$row["studentPaymentDetailID"].'" class="update btn btn-warning btn-xs">Update</button></td>  
+                                    <td class="text-center"><button type="button" name="delete" id="'.$row["studentPaymentDetailID"].'" class="delete btn btn-danger btn-xs">Delete</button></td>  
                                </tr>  
                           ';  
                      }  
@@ -52,4 +52,8 @@
            }  
       }  
  }  
+ ?>
+ <?php
+ //close connections
+ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/close_connections.php');
  ?>

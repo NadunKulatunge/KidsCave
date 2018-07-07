@@ -48,7 +48,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 					</div>  
 					<br />  
 					<br />
-					<div id="result" class="table-responsive"></div>
+					<div id="result"></div>
 
 			</div>
 			<!-- right panel -->

@@ -36,7 +36,7 @@ $result = mysqli_query($connect, $sql);
                      <table class="table table-bordered">  
                           <tr>  
                                <th width="50%" class="text-center">Description</th>  
-                               <th width="50%" class="text-center">Amount</th>  
+                               <th width="50%" class="text-center">Amount (Rs)</th>  
                           </tr>  
                 ';  
                 if(mysqli_num_rows($result) > 0){
@@ -45,7 +45,7 @@ $result = mysqli_query($connect, $sql);
                           $output .= '  
                                <tr>  
                                     <td>'.$row["description"].'</td>  
-                                    <td class="text-right">'.$row["totalAmount"].'</td>  
+                                    <td class="text-right">'.number_format($row["totalAmount"],2).'</td>  
                                </tr>  
 							';
 							
@@ -54,20 +54,20 @@ $result = mysqli_query($connect, $sql);
 					$output .= '  
                                <tr>  
                                     <td>Total</td>  
-                                    <td class="text-right">'.$total.'</td>  
+                                    <td class="text-right">'.number_format($total,2).'</td>  
                                </tr>
 							';
 					$output .= '  
                                <tr>  
                                     <td>Amount paid</td>  
-                                    <td class="text-right">'.$amountpaid.'</td>  
+                                    <td class="text-right">'.number_format($amountpaid,2).'</td>  
                                </tr>
 							';
 					$dueAmount =$total-$amountpaid;
 					$output .= '  
                                <tr>  
                                     <td>Amount Due</td>  
-                                    <td class="text-right">'.$dueAmount.'</td>  
+                                    <td class="text-right">'.number_format($dueAmount,2).'</td>  
                                </tr>
 							';
 							
@@ -245,7 +245,7 @@ $connect->close();
 				<?php 
 				$output .= '</table>'; 
 				echo $output; ?>
-				<?php if($dueAmount<=0){echo ("<span class='text-danger'>You have done all the Payments</span>");} elseif($startDate!=date("Y").'-01-01'){echo ("<b><span class='text-danger'>*** Next payment is on " . $startDate ."</span></b>");}?>
+				<?php if($dueAmount<=0){echo ("<span class='text-danger'>You have done all the Payments</span>");} elseif($startDate!=date("Y").'-01-01'){echo ("<b><span class='text-danger'>Payment due date : " . $startDate ."</span></b>");}?>
 				<br/>
 				<br/>
 				<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" <?php if($dueAmount<=0){echo ("style='display:none;'");}?>>
