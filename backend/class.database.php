@@ -21,5 +21,11 @@ class Database
         }
         return static::$conn;
     }
+
+    public function runQuery($sql)
+    {
+        $stmt = $this->conn->prepare($sql);
+        return $stmt;
+    }
 }
 ?>
