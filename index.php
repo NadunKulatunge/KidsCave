@@ -94,7 +94,7 @@ if(isset($_POST['btn-signup'])){
             $msg = "
 		      <div class='alert alert-danger'>
 				<button class='close' data-dismiss='alert'>&times;</button>
-					<strong>Sorry !</strong>  email allready exists , Please Try another one
+					<strong>Sorry !</strong>  email already exists , Please Try another one
 			  </div>
 			  ";
         } else {
@@ -136,10 +136,10 @@ if(isset($_POST['btn-signup'])){
 if(isset($_GET['id']) && isset($_GET['code'])){
 	$id = base64_decode($_GET['id']);
 	$code = $_GET['code'];
-	
+
 	$statusY = "Y";
 	$statusN = "N";
-	
+
 	$stmt = $user_login->runQuery("SELECT userID,userStatus FROM tbl_users WHERE userID=:uID AND tokenCode=:code LIMIT 1");
 	$stmt->execute(array(":uID"=>$id,":code"=>$code));
 	$row=$stmt->fetch(PDO::FETCH_ASSOC);
@@ -148,17 +148,17 @@ if(isset($_GET['id']) && isset($_GET['code'])){
 			$stmt = $user_login->runQuery("UPDATE tbl_users SET userStatus=:status WHERE userID=:uID");
 			$stmt->bindparam(":status",$statusY);
 			$stmt->bindparam(":uID",$id);
-			$stmt->execute();	
-			
+			$stmt->execute();
+
 			$msg = "
 		           <div class='alert alert-success'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
 					  Thank you for validating your email.
 			       </div>
-			       ";	
+			       ";
 		}else{
 			$msg = "
-		           <div class='alert alert-error'>
+		           <div class='alert alert-danger'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
 					  <strong>sorry !</strong>  Your Account is already Activated : <a href='#small-dialog'>Login here</a>
 			       </div>
@@ -166,12 +166,12 @@ if(isset($_GET['id']) && isset($_GET['code'])){
 		}
 	}else{
 		$msg = "
-		       <div class='alert alert-error'>
+		       <div class='alert alert-danger'>
 			   <button class='close' data-dismiss='alert'>&times;</button>
 			   <strong>sorry !</strong>  No Account Found : <a href='#small-dialog1'>Signup here</a>
 			   </div>
 			   ";
-	}	
+	}
 }
 ?>
 

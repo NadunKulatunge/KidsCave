@@ -60,7 +60,7 @@
 <?php
 if(isset($_GET['inactive'])){
 	?>
-	<div class='alert alert-error'>
+	<div class='alert alert-danger'>
 		<button class='close' data-dismiss='alert'>&times;</button>
 		<strong>Sorry!</strong> Your account is not yet approved. 
 	</div>
@@ -71,7 +71,7 @@ if(isset($_GET['inactive'])){
 <?php
 if(isset($_GET['error'])){
 	?>
-	<div class='alert alert-success'>
+	<div class='alert alert-danger'>
 		<button class='close' data-dismiss='alert'>&times;</button>
 		<strong>Wrong Login Details!</strong> 
 	</div>
@@ -89,7 +89,7 @@ if(isset($_GET['error'])){
 				<?php 
 				if(isset($_GET['inactive'])){
 					?>
-					<div class='alert alert-error'>
+					<div class='alert alert-danger'>
 						<button class='close' data-dismiss='alert'>&times;</button>
 						<strong>Sorry!</strong> Your account is not approved. 
 					</div>
@@ -99,7 +99,7 @@ if(isset($_GET['error'])){
 				<?php
 				if(isset($_GET['error'])){
 					?>
-					<div class='alert alert-success'>
+					<div class='alert alert-danger'>
 						<button class='close' data-dismiss='alert'>&times;</button>
 						<strong>Wrong Login Details!</strong> 
 					</div>
@@ -203,11 +203,13 @@ if(isset($_GET['error'])){
 					<i class="fa fa-key" aria-hidden="true"></i>
 					<input type="password" name="Password" value="<?php if(isset($upass2)){echo $upass2;} ?>" placeholder="Confirm Password" required="">
 				</div>
+                <br/>
+                <!--
 				<div class="agileinfo_subscribe">
 					<div class="check">
 						<label class="checkbox"><input type="checkbox" name="checkbox" required><i> </i>i accept the terms and conditions</label>
 					</div>
-				</div>
+				</div>-->
 				<input type="submit" name="btn-signup">
 			</form>
 			<h5>Already a member <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign In</a></h5>
