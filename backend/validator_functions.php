@@ -17,6 +17,15 @@ function valid_date($data) {
     }
 }
 
+function validateMonth($date){
+    $d = DateTime::createFromFormat('Y-m', $date);
+    if($d && $d->format('Y-m') == $date){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function valid_name($data) {
     if ( empty($data) || !preg_match("/^[a-zA-Z ]*$/",$data) || strlen($data)<2 || strlen($data)>100 ) {
         return false;       //Invalid

@@ -1,7 +1,9 @@
 <?php
 session_start();
-require_once '../class.user.php';
-$user_login = new USER();
+require_once 'dbconfig.php';
+require_once 'class.user.php';
+
+$user_login = new User();
 include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
 
 if(!$user_login->is_logged_in()){
@@ -55,7 +57,7 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                         </select>
                     <br />
                     <label>Birthday</label>
-                        <input type="date" name="birthday" id="birthday" class="form-control"/>
+                        <input type="date" name="birthday" id="birthday" class="form-control" min="<?php echo date("Y-m-d",strtotime("-5 years")); ?>" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>"/>
                     <br />
                     <label>Phone</label>
                         <input type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder="07X-XXX-XXXX" name="phone" id="phone" class="form-control"/>

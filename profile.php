@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'class.user.php';
-$user_login = new USER();
+require_once 'backend/class.user.php';
+$user_login = new User();
 
 if(!$user_login->is_logged_in())
 {
@@ -42,6 +42,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 														
 							<button type="submit" class="btn btn-default">Submit</button>
 						</form>
+
+                            <?php
+                                if($row['userRole']=="Parent"){
+                                    echo '<br>';
+                                    echo '<form action="enterdetails.php">';
+                                    echo '<button type=\'submit\' name="submit" class=\'btn btn-primary\' style="width:50%; display:block ; margin:auto" onclick="sentAlert(\'classid\',\'announcement\');"> Enter Child Details </button>';
+                                    echo '</form>';
+                                }
+
+                            ?>
 					</div>
 			</div>
 			<!-- right panel -->
