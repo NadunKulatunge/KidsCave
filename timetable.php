@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '/backend/class.user.php';
+require_once 'backend/class.user.php';
 include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
 $user_login = new User();
 if(!$user_login->is_logged_in())
@@ -51,10 +51,7 @@ if($_SESSION['userRole']== "Admin" && $_SESSION['userRole']== "Principal" ){
 $(document).ready(function(){
 $('#action').click(function(){ 
 		   var class1=$('input[name=class1]:checked').val(); 
-           //var class1 = $('class1').attr('id');  
-           var day =$('input[name=day]:checked').val();
-		   console.log(class1) 
-		   console.log(day)   
+           var day =$('input[name=day]:checked').val();  
            if(class1 != '' && day != ''){  
                 $.ajax({  
                      url : "timetable_ajax_show.php",  
