@@ -3,8 +3,6 @@ session_start();
 require_once 'backend/class.user.php';
 include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
 $user_login = new User();
-
-
 if(!$user_login->is_logged_in())
 {
 	$user_login->redirect('index.php');
@@ -12,8 +10,6 @@ if(!$user_login->is_logged_in())
 if($_SESSION['userRole']== "Admin" && $_SESSION['userRole']== "Principal" ){
 	$user_login->redirect('../backend/payments.php');
 }
-
-
 ?>
 
 <!-- top html header -->

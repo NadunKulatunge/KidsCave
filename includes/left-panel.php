@@ -41,10 +41,10 @@ if($_SESSION['userRole']=="Parent"){
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
+					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/payments.php">Payments</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Announcements</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/appointments.php">Appointments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
@@ -54,11 +54,11 @@ if($_SESSION['userRole']=="Parent"){
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Announcements</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/appointments.php">Appointments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
@@ -67,13 +67,13 @@ if($_SESSION['userRole']=="Parent"){
 	echo'<div class="col-md-3 left_panel_menu">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/timetable.php">TimeTable</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/timetable.php">TimeTable</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/enrollments.php">Enrollments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Announcements</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
@@ -82,11 +82,11 @@ if($_SESSION['userRole']=="Parent"){
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/profile.php">Profile</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/timetable.php">TimeTable</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/attendance.php">Student Attendance</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/attendance.php">Student Attendance</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/enrollments.php">Enrollments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Announcements</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';

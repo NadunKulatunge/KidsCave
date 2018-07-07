@@ -2,7 +2,16 @@
 		<div class="container">
 			<div class="w3_agile_header_right">
 				<ul>
-					<li><a href="#small-dialog1" style="background: red;"class="play-icon popup-with-zoom-anim">Enroll Now!</a></li>
+				
+					<li><a href="#small-dialog1" id="enr" style="background: red;"class="play-icon popup-with-zoom-anim">Enroll Now!</a></li>
+				<script>	
+    					var d = new Date();
+    					var n = d.getMonth();
+						if (n!=0 && n!=11 && n!=10 && n!=6){
+    					document.getElementById("enr").style.display = "none";}
+					
+				</script>
+					
 					<?php
 					if($user_login->is_logged_in()!=""){
 						echo '<li><a href="'.SCRIPT_ROOT.'/profile.php">MyAccount</a></li>';

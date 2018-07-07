@@ -1,4 +1,3 @@
-
  <?php
 $servername = "localhost";
 $username = "root";
@@ -33,8 +32,4 @@ catch(PDOException $e)
     }
 
 $conn = null;
-?>
-<?php
-//close connections
-include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/close_connections.php');
 ?>

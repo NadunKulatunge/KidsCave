@@ -193,3 +193,8 @@ function showElement(id){
 <?php include('includes/footer.php'); ?>
 <!-- //footer -->
 <?php include('includes/bottom-footer.php'); ?>
+
+
+
+
+
