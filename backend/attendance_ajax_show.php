@@ -1,4 +1,4 @@
-<!--$sql="SELECT * FROM user WHERE id = '".$q."'";-->
+
 <?php
 
 
