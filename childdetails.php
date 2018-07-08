@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once 'backend/class.user.php';
-include_once($_SERVER['DOCUMENT_ROOT'].'/backend/dbconfig.php');
-$user_login = new User();
+require_once 'class.user.php';
+include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
+$user_login = new USER();
 
 if(!$user_login->is_logged_in())
 {
@@ -49,7 +49,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                         $child = $_POST ["child"];
 
                         $output = '';
-                        $query = "SELECT tbl_users.userID,student_details.ChildName,student_details.Gender, student_details.DateofBirth,tbl_users.userName, tbl_users.userEmail ,student_details.MobileNo, student_details.LandNo,student_details.Address FROM tbl_users,student_details WHERE tbl_users.userID=student_details.userID AND tbl_users.userRole=\"Parent\" AND tbl_users.adminApprove =\"1\" AND tbl_users.principalApprove=\"1\" AND '$child'=ChildName;";
+                        $query = "SELECT tbl_users.userID,student_guardian.studentName,student_guardian.student_guardianID,tbl_users.Gender,tbl_users.birthday,student_guardian.parentName,student_guardian.gender,tbl_users.userName, tbl_users.userEmail ,student_guardian.mobile, student_guardian.phone,student_guardian.address FROM tbl_users,student_guardian WHERE tbl_users.userID=student_guardian.userID AND tbl_users.userRole=\"Parent\" AND tbl_users.adminApprove =\"1\" AND tbl_users.principalApprove=\"1\" AND '$child'=studentName;";
                         $result = mysqli_query($connect, $query);
 
                         if(mysqli_num_rows($result) > 0) {
@@ -61,21 +61,25 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                                <th width="50%" class="text-center">User ID</th>  
                                <th width="50%" class="text-center">'.$row["userID"].'</th></tr><tr>
                                <th width="50%" class="text-center">Child Name</th>  
-                               <th width="50%" class="text-center">'.$row["ChildName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["studentName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Child ID</th>  
+                               <th width="50%" class="text-center">'.$row["student_guardianID"].'</th></tr><tr>
                                <th width="50%" class="text-center">Gender</th>  
                                <th width="50%" class="text-center">'.$row["Gender"].'</th></tr><tr>
                                <th width="50%" class="text-center">Date of Birth</th>  
-                               <th width="50%" class="text-center">'.$row["DateofBirth"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["birthday"].'</th></tr><tr>
                                <th width="50%" class="text-center">Parent Name</th>  
-                               <th width="50%" class="text-center">'.$row["userName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["parentName"].'</th></tr><tr>
+                               <th width="50%" class="text-center">Parent Gender</th>  
+                               <th width="50%" class="text-center">'.$row["gender"].'</th></tr><tr>
                                <th width="50%" class="text-center">Parent Email</th>  
                                <th width="50%" class="text-center">'.$row["userEmail"].'</th></tr><tr>
                                <th width="50%" class="text-center">Mobile</th>  
-                               <th width="50%" class="text-center">'.$row["MobileNo"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["mobile"].'</th></tr><tr>
                                <th width="50%" class="text-center">Phone</th>  
-                               <th width="50%" class="text-center">'.$row["LandNo"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["phone"].'</th></tr><tr>
                                <th width="50%" class="text-center">Address</th>  
-                               <th width="50%" class="text-center">'.$row["Address"].'</th></tr><tr>
+                               <th width="50%" class="text-center">'.$row["address"].'</th></tr><tr>
                                
                           </tr> </table>
                            ';
