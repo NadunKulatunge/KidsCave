@@ -52,9 +52,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <script>
 function showClass(int) {
     if (int!=0) {
-			
-			console.log(int) ;
-          
            $.ajax({  
                 url:"attendance_ajax_show.php",  
                 method:"POST",  
@@ -71,7 +68,6 @@ function showClass(int) {
 
 $(document).ready(function(){
 	$(document).on('click','input[type="radio"]', function(){
-	//$('input[type="radio"]').click(function(){ 
 		if (this.checked) {
 			var cl= $('select[name=class1]').val();
            var status1 = $(this).val();
@@ -95,8 +91,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$(document).on('click','.update', function(){
 		if (document.getElementsByClassName("a").checked){
-			var id = $(this).attr("id"); 
-		   console.log(id) 
+			var id = $(this).attr("id");  
            $.ajax({  
                 url:"attendance_ajax_submit.php",  
                 method:"POST",  

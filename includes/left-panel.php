@@ -44,8 +44,8 @@ if($_SESSION['userRole']=="Parent"){
 					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/payments.php">Payments</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/appointments.php">Appointments</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/messages.php">Messages</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/appointments.php">Appointments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
@@ -58,8 +58,8 @@ if($_SESSION['userRole']=="Parent"){
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/leave.php">Leave Request</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/appointments.php">Appointments</a></li>
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/messages.php">Messages</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/appointments.php">Appointments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
@@ -73,7 +73,7 @@ if($_SESSION['userRole']=="Parent"){
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/enrollments.php">Enrollments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
@@ -86,7 +86,7 @@ if($_SESSION['userRole']=="Parent"){
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/payments.php">Payments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/enrollments.php">Enrollments</a></li>
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/childdetails.php">Child Details</a></li>
-					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/messages.php">Messages</a></li>					
+					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/backend/messages.php">Messages</a></li>					
 					<li role="presentation" class="box"><a href="'.SCRIPT_ROOT.'/logout.php">Log Out</a></li>
 				</ul>
 			</div>';
