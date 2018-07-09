@@ -1,9 +1,9 @@
 <?php
 
-$output = '';
-$total = 0;
-$amountpaid = 0;
-$newdate1='2012-01-01'; //default for date
+$output = ''; //the output to display
+$total = 0; //Total amount the user has to pay
+$amountpaid = 0; //Total amount user has paid for this year
+$newdate1='2012-01-01'; //default date value
 
 /**get users earlier payments**/
 
