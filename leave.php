@@ -100,11 +100,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                         </div>
                     </div>
                     <?php ;} ?>
-            </div>
+            	</div>
         </div>
         </div>
-			<!-- right panel -->
-		</div>
+	<!-- right panel -->
+	</div>
 	</div>
 </div>
 
