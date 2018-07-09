@@ -9,10 +9,12 @@ if(!$user_login->is_logged_in()){
 }
 
 //Allowed only Admin && Principal userRole
-if($_SESSION['userRole']!= "Admin" && $_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Teacher"){
+if($_SESSION['userRole']!= "Admin" && $_SESSION['userRole']!= "Principal"){
 	$user_login->redirect('../payments.php');
 }
-
+if($_SESSION['userRole']== "Teacher"){
+    $user_login->redirect('../index.php');
+}
 $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
 $stmt->execute(array(":uid"=>$_SESSION['userSession']));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);

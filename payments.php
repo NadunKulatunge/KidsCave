@@ -11,8 +11,11 @@ $user_login = new User();
 if(!$user_login->is_logged_in()){
 	$user_login->redirect('index.php');
 }
-if($_SESSION['userRole']== "Admin" && $_SESSION['userRole']== "Principal" && $_SESSION['userRole']== "Teacher"){
+if($_SESSION['userRole']== "Admin" && $_SESSION['userRole']== "Principal"){
 	$user_login->redirect('../backend/payments.php');
+}
+if($_SESSION['userRole']== "Teacher"){
+    $user_login->redirect('index.php');
 }
 
 include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
