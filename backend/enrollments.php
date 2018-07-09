@@ -35,10 +35,10 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
 					<h3 align="center">Approve Enrollments</h3>
 					<br /><br />    
 					<label>Name</label>
-					    <input type="text" name="name" id="name" class="form-control"/>
+					    <input required minlength="5" maxlength="100" type="text" name="name" id="name" class="form-control"/>
                     <br />
 					<label>Email</label>
-					    <input type="email" name="email" id="email" class="form-control"/>
+					    <input required type="email" name="email" id="email" class="form-control"/>
                     <br />
                     <label>User Role</label>
                         <select id="role" name="role" required class="form-control">
@@ -57,10 +57,10 @@ if($_SESSION['userRole']!= "Principal" && $_SESSION['userRole']!= "Admin"){
                         </select>
                     <br />
                     <label>Birthday</label>
-                        <input type="date" name="birthday" id="birthday" class="form-control" min="<?php echo date("Y-m-d",strtotime("-5 years")); ?>" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>"/>
+                        <input required type="date" name="birthday" id="birthday" class="form-control" min="<?php echo date("Y-m-d",strtotime("-5 years")); ?>" max="<?php echo date("Y-m-d",strtotime("-4 years")); ?>"/>
                     <br />
                     <label>Phone</label>
-                        <input type="tel" pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' placeholder="07X-XXX-XXXX" name="phone" id="phone" class="form-control"/>
+                        <input required type="tel" pattern='[0-9]{10}' placeholder="07X XXX XXXX" name="phone" id="phone" class="form-control"/>
                     <br />
                     <label>Class Room</label>
                 <?php

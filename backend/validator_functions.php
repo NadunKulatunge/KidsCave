@@ -66,7 +66,7 @@ function valid_gender($data) {
     }
 }
 function valid_phone($data) {
-    if ( empty($data) || !preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $data) ) {
+    if ( empty($data) || !preg_match("/^[0-9]{10}$/", $data) ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
@@ -102,7 +102,7 @@ function valid_payment_description($data) {
     }
 }
 function valid_payment_amount($data) {
-    if ( empty($data) || !preg_match("/^[0-9]*$/",$data) || $data==0 || $data>10000000 ) {
+    if ( empty($data) || !preg_match("/^[0-9]*$/",$data) || $data==0 || $data>99999 ) {
         return false;       //Invalid
     }else{
         return true;        //Valid
