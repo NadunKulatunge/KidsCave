@@ -63,7 +63,7 @@ function getTeacherTable($teacherID,$user_login)
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "--------------------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
@@ -87,7 +87,7 @@ function getParentTable($classID,$user_login){
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "--------------------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
@@ -112,7 +112,7 @@ function getAllTable($user_login){
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "----------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
