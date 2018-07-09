@@ -36,10 +36,10 @@ if($_SESSION['userRole']== "Admin" && $_SESSION['userRole']== "Principal" ){
 					<br />  
 				<label>Select Day:</label>  
 					<input type="radio" value='Monday' name="day" />Monday
-					<input type="radio" value='Monday' name="day"  />Tuesday
-					<input type="radio" value='Monday' name="day" />Wednesday
-					<input type="radio" value='Monday' name="day" />Thursday
-					<input type="radio" value='Monday' name="day" />Friday  
+					<input type="radio" value='Tuesday' name="day"  />Tuesday
+					<input type="radio" value='Wednesday' name="day" />Wednesday
+					<input type="radio" value='Thursday' name="day" />Thursday
+					<input type="radio" value='Friday' name="day" />Friday  
 					<br /><br />
 					<button type="button" name="action" id="action" class="btn btn-primary" style="width:25%;">Get Time Table</button>
 			<span id="txtHint"></span>
@@ -58,7 +58,7 @@ $('#action').click(function(){
 		   console.log(class1) 
 		   console.log(day)   
 
-           if(class1 != '' && day != ''){  
+           if(class1 != undefined && day != undefined){  
                 $.ajax({  
                      url : "timetable_ajax_show.php",  
                      method:"POST",  

@@ -11,13 +11,15 @@ $sql="SELECT COUNT(studentAttendanceID)
     WHERE state='present' AND `date`='$date' AND classID='".$_POST['cl']."'";
     $result=0;
 //count students in class
-$result0 = mysqli_query($con,"SELECT COUNT(studentID) idcount FROM student WHERE   (  classID='".$_POST['cl']."')");
+$result0 = mysqli_query($con,"SELECT COUNT(userID) idcount FROM tbl_users WHERE   (  classID='".$_POST['cl']."' AND userRole='Parent')");
 $row0 = mysqli_fetch_assoc($result0);
 $classCount=$row0['idcount'];
+
 //count the marked attendance 
 $result2 = mysqli_query($con,"SELECT COUNT(studentAttendanceID) marked FROM student_attendance WHERE   (  `date`='$date' AND classID='".$_POST['cl']."')");
 $row2 = mysqli_fetch_assoc($result2);
 $markedno=$row2['marked'];
+
 if ($classCount==$markedno){//check all studence attendance have marked
 //count attendance
     $result = mysqli_query($con,"SELECT COUNT(studentAttendanceID) c FROM student_attendance WHERE   ( `status`='present' AND `date`='$date' AND classID='".$_POST['cl']."')");
