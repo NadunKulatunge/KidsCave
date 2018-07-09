@@ -75,7 +75,7 @@ if(isset($_POST['btn-submitinfo'])){
     }
     if($Err!=""){
         //if error msg found in registration form don't save to database
-        $msg = "
+        $msg1 = "
 		      <div class='alert alert-danger'>
 				<button class='close' data-dismiss='alert'>&times;</button>
 					<strong>Sorry !</strong> ".$Err."
@@ -113,7 +113,7 @@ if(isset($_POST['btn-submitinfo'])){
                 $phone = $_POST["phone"];
                 $stmt->execute();
                 $stmt->close();
-                $user_login->redirect('parentinfo.php?p=success');
+                $user_login->redirect('parentinfo.php?q=success');
             }
         }
     }
@@ -136,16 +136,12 @@ if(isset($_POST['btn-submitinfo'])){
 
                 <h3 align="center">Enter Parent Details</h3>
                 <form action="#" method="post">
-                    <?php if(isset($msg)) echo $msg;  ?>
+                    <?php if(isset($msg1)) echo $msg1;  ?>
                     <?php if(isset($_GET["q"]) && ($_GET["q"]=="success")){
-                        echo '<script language="javascript">';
-                        echo 'alert("Successfully information updated.")';
-                        echo '</script>';
-                    }
-                    elseif(isset($_GET["p"]) && ($_GET["p"]=="success")) {
-                        echo '<script language="javascript">';
-                        echo 'alert("Successfully information saved.")';
-                        echo '</script>';
+                        echo '<div class=\'alert alert-success\'>
+		                            <button class=\'close\' data-dismiss=\'alert\'>&times;</button>
+		                            <strong>Data has been updated!</strong> 
+	                            </div>';
                     }
 			        ?>
                     <br /><br />
@@ -180,7 +176,7 @@ if(isset($_POST['btn-submitinfo'])){
                     <select id="genderEdit" name="genderEdit" required="" class="form-control">
                         <option <?php if($gender==""){echo"selected";}?> value="">Gender</option>
                         <option <?php if($gender=="Male"){echo"selected";}?> value="Male">Male</option>
-                        <option <?php if($gender=="Female"){echo"selected";}?>value="Female">Female</option>
+                        <option <?php if($gender=="Female"){echo"selected ";}?>value="Female">Female</option>
                     </select>
                     <br />
                     <label>Mobile</label>
