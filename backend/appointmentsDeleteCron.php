@@ -7,9 +7,12 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/dbconfig.php');
 $stmt = $user_login->runQuery("DELETE FROM teacher_appointment WHERE appointmentDateTime < NOW()");
 $stmt->execute();
 if ($stmt->rowCount()> 0) 
-	{
+{
 		echo "expired Records deleted successfully";
-	}
+}else
+{
+	echo "no expired appointments";
+}
 
 
 
