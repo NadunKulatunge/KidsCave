@@ -2946,7 +2946,7 @@ div.box1{
 	font-family:Comic Sans MS;
 	background-color:rgba(100,160,100,0.3);
 	background:url(../images/24.jpg) 1280px 800px;
-	width:900px;
+	width:848px;
 	height:200px;
 	overflow:scroll;
 	!overflow-x: hidden;
@@ -2958,7 +2958,7 @@ div.box2{
 	font-weight:bold;
 	background-color:rgba(130,100,100,0.3);
 	background:url(../images/24.jpg) 1280px 800px;
-	width:900px;
+	width:848px;
 	height:435px;
 	overflow:scroll;
 	!overflow-x: hidden;
