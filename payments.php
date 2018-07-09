@@ -101,14 +101,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/payments_frontend.php'
 							<span class="text-danger"><?php echo $paymentMethodErr;?></span>
 						</div>
 					</div>
-					<div id="CardPaymentDiv" style="display:none;">
+                    <? echo $paymentMethod;?>
+                    <?php if(isset($nameErr) || isset($nameErr) ||isset($cardNumberErr) ||isset($durationErr) ||isset($cvvErr)){$cardErr=true;}?>
+					<div id="CardPaymentDiv" <?php if (isset($paymentMethod) && $paymentMethod!="Card") echo "style=\"display:none;";?>" >
 						<div class="form-group">
 							<div class= "row">
 								<div class="col-xs-6">
 									<label for="labelName">Name on Card</label>
 								</div>
 								<div class="col-xs-6">
-									<input disabled value="<?php echo $name;?>" name ="name" id="name" type="text" class="form-control" id="inputName" placeholder="A B C JOHN" required=""  minlength="4">
+									<input <?php if (isset($paymentMethod) && $paymentMethod!="Card") echo "disabled";?> value="<?php echo $name;?>" name ="name" id="name" type="text" class="form-control" id="inputName" placeholder="A B C JOHN" required=""  minlength="4">
 									<span class="text-danger"><?php echo $nameErr;?></span>
 								</div>
 							</div>
@@ -119,7 +121,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/payments_frontend.php'
 									<label for="labelCardNumber">Card Number</label>
 								</div>
 								<div class="col-xs-6">
-									<input disabled value="<?php echo $cardNumber;?>" name ="cardNumber" id="cardNumber" type="tell" value="" required="" data-required-message="Please enter card number." pattern="[0-9]{16,19}" max-length="19" autocomplete="off" class="form-control" id="inputCardNumber">
+									<input <?php if (isset($paymentMethod) && $paymentMethod!="Card") echo "disabled";?> value="<?php echo $cardNumber;?>" name ="cardNumber" id="cardNumber" type="tell" value="" required="" data-required-message="Please enter card number." pattern="[0-9]{16,19}" max-length="19" autocomplete="off" class="form-control" id="inputCardNumber">
 									<span class="text-danger"><?php echo $cardNumberErr;?></span>
 								</div>
 							</div>
@@ -130,7 +132,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/payments_frontend.php'
 									<label for="labelValidTill">Valid till</label>
 								</div>
 								<div class="col-xs-6">
-									<input disabled value="<?php echo $duration;?>" name="validTill" id="validTill" type="month" min="<?php echo date("Y-m",strtotime("today")); ?>" max="<?php echo date("Y-m",strtotime("+5 years")); ?>" class="form-control" id="inputValidTill" placeholder="month/year">
+									<input <?php if (isset($paymentMethod) && $paymentMethod!="Card") echo "disabled";?> value="<?php echo $duration;?>" name="validTill" id="validTill" type="month" min="<?php echo date("Y-m",strtotime("today")); ?>" max="<?php echo date("Y-m",strtotime("+5 years")); ?>" class="form-control" id="inputValidTill" placeholder="month/year">
 									<span class="text-danger"><?php echo $durationErr;?></span>
 								</div>
 							</div>
@@ -141,7 +143,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/KidsCave/backend/payments_frontend.php'
 									<label for="labelCVV">CVV</label>
 								</div>
 								<div class="col-xs-6">
-									<input disabled value="<?php echo $cvv;?>" type="text" class="form-control" name = "cvv" id="cvv" placeholder="xxx" required=""  pattern="\d{3}" autocomplete="off" >
+									<input <?php if (isset($paymentMethod) && $paymentMethod!="Card") echo "disabled";?> value="<?php echo $cvv;?>" type="text" class="form-control" name = "cvv" id="cvv" placeholder="xxx" required=""  pattern="\d{3}" autocomplete="off" >
 									<span class="text-danger"><?php echo $cvvErr;?></span>
 								</div>
 							</div>
