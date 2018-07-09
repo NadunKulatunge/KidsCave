@@ -8,6 +8,10 @@ if(!$user_login->is_logged_in())
 {
 	$user_login->redirect($_SERVER['DOCUMENT_ROOT'].'/KidsCave/index.php');
 }
+if($_SESSION['userRole']=='Principal' || $_SESSION['userRole']=='Admin' ) 
+{
+	$user_login->redirect($_SERVER['DOCUMENT_ROOT'].'/KidsCave/index.php');
+}
 
 $stmt = $user_login->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
 $stmt->execute(array(":uid"=>$_SESSION['userSession']));
@@ -15,6 +19,14 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $userID = $row['userID'];
 $teacherID = $userID;
 $student_guardianID = $userID;
+
+
+
+
+
+$stmt = $user_login->runQuery("SELECT userName FROM tbl_users WHERE userRole='Teacher'");
+$stmt->execute(array());
+$teachersNameRow = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 <?php
@@ -111,16 +123,25 @@ $student_guardianID = $userID;
 			$userRole = $_SESSION['userRole'];
 			$guardianID = $_POST['guardianID'];
 			$message = $_POST["message"];
-
-			$stmt = $user_login->runQuery("INSERT INTO teacher_appointment(teacherID, askedBy , guardianID, message, appointmentDateTime) 
-																			VALUES(:teacherID, :userRole, :guardianID, :message, :dateTime)");
-			$stmt->bindparam(":teacherID",$teacherID);
-			$stmt->bindparam(":userRole",$userRole);
-			$stmt->bindparam(":guardianID",$guardianID);
-			$stmt->bindparam(":message",$message);
-			$stmt->bindparam(":dateTime",$timestamp);
+			
+			$stmt = $user_login->runQuery("SELECT userName FROM tbl_users WHERE userRole='Parent' and userID='".$guardianID."'");
 			$stmt->execute();
-			echo "<script> alert('appointment sent succesfuly');</script>";
+			if($stmt->rowCount()>0)
+			{
+				$stmt = $user_login->runQuery("INSERT INTO teacher_appointment(teacherID, askedBy , guardianID, message, appointmentDateTime) 
+																			VALUES(:teacherID, :userRole, :guardianID, :message, :dateTime)");
+				$stmt->bindparam(":teacherID",$teacherID);
+				$stmt->bindparam(":userRole",$userRole);
+				$stmt->bindparam(":guardianID",$guardianID);
+				$stmt->bindparam(":message",$message);
+				$stmt->bindparam(":dateTime",$timestamp);
+				$stmt->execute();
+				echo "<script> alert('appointment sent succesfuly');</script>";
+				
+			}else
+			{
+				echo "<script> alert('please enter an id of a parent');</script>";
+			}
 		}	
 	}
 ?>
@@ -372,7 +393,7 @@ function getTableTeacherSent($teacherID, $user_login)
 					<!--parent sent appointments------------------->
 					<br>
 					<div >
-						<h2 style="display:inline">appointments sent by you</h2>
+						<h2 style="display:inline">Appointments sent by you</h2>
 						<button type='submit' class='btn btn-primary' style=" display:inline ; float:right" onclick="showElement('table2');"> Show/Hide </button>
 					</div>
 					<br>
@@ -387,11 +408,19 @@ function getTableTeacherSent($teacherID, $user_login)
 						<form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post" >
 							<div class='form-group' id="teacherIdInput">
 								<label> Enter the id of the teacher you wish to contact</label>
-								<input type='number' class='form-contol' name= 'teacherID' id='teacherID' placeholder='teacher id' min="1" max="50" required >
+								<select name='teacherID'>
+									<?php 
+										$stmt = $user_login->runQuery("SELECT userID, userName FROM tbl_users WHERE userRole='Teacher'");
+										$stmt->execute(array());
+										while ($teachersRow = $stmt->fetch(PDO::FETCH_ASSOC)) {				 
+										  echo "<option  id='teacherID' value =".$teachersRow['userID'].">".$teachersRow['userName']."</option>";
+										}
+									?>
+								</select>
 							</div>
 							<div class='form-group'>
 								<label> Enter the Message </label><br/>
-								<textarea type='text' class='form-group' name='message' id='message' placeholder='type your message here' style="height:100px ; width:848px ;resize:none ; margin:auto" required></textarea>
+								<textarea type='text' class='form-group' name='message' id='message' placeholder='type your message here' min='5' style="height:100px ; width:848px ;resize:none ; margin:auto" required></textarea>
 							</div>
 							<div class='form-group'>
 								<label> Enter the date for the appointment</label>
@@ -425,7 +454,7 @@ function getTableTeacherSent($teacherID, $user_login)
 					<!----- appointments sent by teacher-->
 					<br>
 					<div style="display:inline">
-						<h2 style=" display:inline ;"> appointments sent by you  </h2>
+						<h2 style=" display:inline ;"> Appointments sent by you  </h2>
 						<button type='submit' class='btn btn-primary' style=" display:inline ; float:right" onclick="showElement('table2');"> Show/Hide </button><br>
 					</div>
 					<br>
@@ -443,7 +472,7 @@ function getTableTeacherSent($teacherID, $user_login)
 						<form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post" >
 							<div class='form-group'>
 								<label> Enter the id of the parent you wish to contact</label>
-								<input type='number' class='form-contol' name= 'guardianID' id='guardianID' placeholder='guardian id' min="1" max="20" required >
+								<input type='number' class='form-contol' name= 'guardianID' id='guardianID' placeholder='id' min="1" max="20" required >
 							</div>
 							<div class='form-group'>
 								<label> Enter the Message </label><br/>
