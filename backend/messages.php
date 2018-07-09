@@ -15,7 +15,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 $userID = $row['userID'];
 $teacherID = $userID ;
 
-
 if($_SESSION['userRole']=="Parent")
 {
 	$stmt = $user_login->runQuery("SELECT classID FROM tbl_users WHERE userID=:userID");
@@ -63,7 +62,7 @@ function getTeacherTable($teacherID,$user_login)
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "--------------------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
@@ -87,7 +86,7 @@ function getParentTable($classID,$user_login){
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "--------------------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
@@ -112,7 +111,7 @@ function getAllTable($user_login){
 		foreach ($messages as $value)
 		{
 			echo $value;
-			echo "----------------------------------------------------------------<br>";
+			echo "<hr><br>";
 		}
 	}else
 	{
@@ -147,7 +146,7 @@ function getAllTable($user_login){
 						</div>
 						<div class='form-group'>
 							<label> Enter class id </label>
-							<input type='number' class='form-contol' name= 'classid' id='classid' placeholder='class id' min="1" max="20" required >
+							<input type='number' class='form-contol' name= 'classid' id='classid' placeholder='id' min="1" max="20" required >
 						</div>
 						<div class='form-group'>
 							<label> Enter the Announcement </label><br/>
