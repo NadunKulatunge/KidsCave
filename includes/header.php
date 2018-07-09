@@ -108,7 +108,7 @@ if(isset($_GET['error'])){
 					?>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-user" aria-hidden="true"></i>
-					<input type="text" name="txtemail" placeholder="Email" required="">
+					<input type="email" name="txtemail" placeholder="Email" required="">
 				</div>
 				<div class="agileits_w3layouts_user">
 					<i class="fa fa-key" aria-hidden="true"></i>
