@@ -52,6 +52,13 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
 			<!-- //left panel -->
 			<!-- right panel -->
 			<div class="col-md-9">
+                <?php if(isset($_GET["q"]) && ($_GET["q"]=="success")){
+                    echo '<div class=\'alert alert-success\'>
+	                        <button class=\'close\' data-dismiss=\'alert\'>&times;</button>
+		                    <strong>Leave request has been sent!</strong>
+                        </div>';
+                }
+                ?>
             <div>
                 <?php if ($_SESSION['userRole']=="Teacher" || $_SESSION['userRole']=="Admin" || $_SESSION['userRole']=="Parent" ){?>
                     <form action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post" >
@@ -61,11 +68,11 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                         </div>
                         <div class='form-group'>
                             <label>Date</label>
-                            <input type="date" name="date" value="<?php if(isset($date)){echo $date;} ?>" placeholder="Date of Leave" required="" max="<?php echo date("Y-m-d",strtotime("4 years")); ?>" min="<?php echo date("Y-m-d",strtotime("-1 months")); ?>">
+                            <input type="date" name="date" class="form-control" value="<?php if(isset($date)){echo $date;} ?>" placeholder="Date of Leave" required="" max="<?php echo date("Y-m-d",strtotime("4 years")); ?>" min="<?php echo date("Y-m-d",strtotime("-1 months")); ?>">
                         </div>
                         <div class='form-group'>
                             <label> Reason to leave </label><br/>
-                            <textarea type='text' class='form-group' name='reason' id='reason' placeholder='type your message here' style="height:150px ; width:900px ;resize:none ; margin:auto" required></textarea>
+                            <textarea type='text'  class='form-group' name='reason' id='reason'  placeholder='type your message here...' style="height:150px ; width:900px ;resize:none ; margin:auto" required=""maxlength="500"  minlength="5""></textarea>
                         </div>
                         <button type='submit' class='btn btn-primary' style="width:50%; display:block ; margin:auto" > Send </button><br>
                     </form>
@@ -91,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                                 $messages = array_reverse($messages);
                                 foreach ($messages as $value){
                                     echo $value;
-                                    echo "----------------------------------------------------------------<br>";
+                                    echo "<hr><br>";
                                 }
                             }else{
                                 echo "no recent messages";
@@ -100,20 +107,15 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
                         </div>
                     </div>
                     <?php ;} ?>
-            	</div>
+            </div>
         </div>
         </div>
-	<!-- right panel -->
-	</div>
+			<!-- right panel -->
+		</div>
 	</div>
 </div>
 
-<?php if(isset($_GET["q"]) && ($_GET["q"]=="success")){
-    echo '<script language="javascript">';
-    echo 'alert("Successfully leave request sent.")';
-    echo '</script>';
-}
-?>
+
 
 <!-- footer -->
 <?php include('includes/footer.php'); ?>
