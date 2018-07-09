@@ -40,15 +40,15 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 								<input class='form-control' id='disabledInputUserRole' type='email' value='<?php echo $row['userRole']; ?>' disabled>
 							</div>
 														
-							<button type="submit" class="btn btn-default">Submit</button>
+							
 						</form>
 
                             <?php
                                 if($row['userRole']=="Parent"){
                                     echo '<br>';
-                                    echo '<form action="enterdetails.php">';
-                                    echo '<button type=\'submit\' name="submit" class=\'btn btn-primary\' style="width:50%; display:block ; margin:auto" onclick="sentAlert(\'classid\',\'announcement\');"> Enter Child Details </button>';
-                                    echo '</form>';
+                                    echo '<form action="backend/parentinfo.php">';
+                                    echo '<button type=\'submit\' name="submit" class=\'btn btn-primary\' style="width:50%; display:block ; margin:auto" onclick="sentAlert(\'classid\',\'announcement\');"> Enter Parent Information </button>';
+				    echo '</form>';
                                 }
 
                             ?>
