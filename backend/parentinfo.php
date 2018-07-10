@@ -169,7 +169,7 @@ if(isset($_POST['btn-submitinfo'])){
                     <br />
 
                     <label>Parent Name</label>
-                    <input type="text" name="parentname" pattern=".{5,100}" placeholder="5 to 100 characters" value='<?php echo $parentName; ?>' required="" id="parentname" class="form-control"/>
+                    <input type="text" name="parentname" pattern="[A-Za-z. ]{5,100}"  placeholder="5 to 100 characters" value='<?php echo $parentName; ?>' required="" id="parentname" class="form-control"/>
                     <br />
 
                     <label>Parent Gender</label>
