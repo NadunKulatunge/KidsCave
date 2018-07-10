@@ -38,7 +38,7 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" >
                         <button type='submit' name="submit" class='btn btn-primary' style="width:50%; display:block ; margin:auto" onclick="sentAlert('classid','announcement');"> Search </button>
                         <label>Enter Child Name</label>
-                        <input autocomplete="off" type="text" name="child" id="child" class="form-control" placeholder="Enter Child Name" />
+                        <input autocomplete="off" type="text" name="child" id="child" class="form-control" pattern="[A-Za-z. ]{5,100}" required="" placeholder="Enter Child Name" />
                     </form>
                     <div id="childList">
                     </div>
